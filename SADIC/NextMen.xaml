@@ -1,0 +1,51 @@
+﻿<Window x:Class="SADIC.NextMen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+        Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFB3C8EC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="36*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="142" Margin="367,19,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
+        <Label Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="366,181,0,0" Width="139"/>
+        <Button Click="chiq_Click" x:Name="chiq" Content="Дети" HorizontalAlignment="Left" Margin="34,24,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Click="rod_Click" x:Name="rod" Content="Родители" HorizontalAlignment="Left" Margin="34,73,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Click="grou_Click" x:Name="grou" Content="Группы" HorizontalAlignment="Left" Margin="34,122,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Click="mer_Click" x:Name="mer" Content="Мероприятия" HorizontalAlignment="Left" Margin="34,262,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Click="kry_Click" x:Name="kry" Content="Кружки" HorizontalAlignment="Left" Margin="34,214,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Click="ys_Click" x:Name="ys" Content="Учителя" HorizontalAlignment="Left" Margin="34,169,0,0" VerticalAlignment="Top" Width="116" Height="30">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="36" Grid.Row="1" VerticalAlignment="Top" Width="583" Background="#FF92A3DC">
+            <Label x:Name="data111" Content="Label" HorizontalAlignment="Left" Margin="220,0,0,0" VerticalAlignment="Top" Width="159"/>
+        </Grid>
+
+    </Grid>
+</Window>

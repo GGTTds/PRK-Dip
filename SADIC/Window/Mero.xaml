@@ -1,0 +1,40 @@
+﻿<Window x:Class="SADIC.Mero"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+           Title="Мероприятия" Height="316.303" Width="580.723" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF509097">
+        <Label x:Name="Now" Content="Мероприятия" Margin="193,0,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152" />
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="340" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding ID_Event}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Дата проведения" Binding="{Binding Date}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditBtn" Content="Редактировать" Width="auto"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="del" Content="Удалить"  Margin="410,143,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
+        <Button  x:Name="add" Content="Добавить" Margin="410,72,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
+
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button  x:Name="add_Copy" Content="Отчет" Margin="410,209,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="Red">
+
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

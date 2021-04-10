@@ -1,0 +1,18 @@
+﻿<Window x:Class="SADIC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="198.652" Width="326.652" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="#FF43B9DC">
+        <Label Content="Вход" Margin="137,2,0,0" VerticalAlignment="Top" Height="46" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="59"/>
+        <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="29,58,0,0" VerticalAlignment="Top" Height="23" Width="93"/>
+        <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Height="23" Width="108"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="133,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF52200" BorderBrush="Red"/>
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="133,102,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF50D0D" BorderBrush="Red"/>
+        <Button Click="VX_Click" x:Name="VX" Content="Вход" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="136" Background="#FFFF1212" OpacityMask="Red"/>
+        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="172,155,0,0" VerticalAlignment="Top" Width="136" Background="#FF1FF11F" OpacityMask="Red"/>
+    </Grid>
+</Window>
