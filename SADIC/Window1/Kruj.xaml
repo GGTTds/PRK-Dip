@@ -1,4 +1,4 @@
-﻿<Window x:Class="SADIC.Kruj"
+﻿<Window x:Class="SADIC.Kruj" Activated="Window_Activated"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,20 +15,14 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="EditBtn" Content="Редактировать" Width="auto"/>
+                            <Button x:Name="EditBtn" Content="Редактировать" Width="auto" Click="EditBtn_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="del" Content="Удалить"  Margin="425,139,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
-        <Button  x:Name="add" Content="Добавить" Margin="425,68,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
-
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button  x:Name="add_Copy" Content="Отчет" Margin="425,205,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="Red">
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="416,172,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
+        <Button Click="add_Click"  x:Name="add" Content="Добавить" Margin="416,101,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
 
             <Button.Background>
                 <ImageBrush/>

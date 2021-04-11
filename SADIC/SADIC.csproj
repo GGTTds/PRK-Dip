@@ -67,8 +67,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ADEv.xaml.cs">
+      <DependentUpon>ADEv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="adGrup.xaml.cs">
+      <DependentUpon>adGrup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ADPred.xaml.cs">
       <DependentUpon>ADPred.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="adZAna.xaml.cs">
+      <DependentUpon>adZAna.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChilAdd.xaml.cs">
       <DependentUpon>ChilAdd.xaml</DependentUpon>
@@ -140,7 +149,19 @@
     <Compile Include="Zanztia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="ADEv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="adGrup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ADPred.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="adZAna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

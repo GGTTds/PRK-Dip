@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Добавление" Height="349.781" Width="381.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FF72DAC3">
-        <Button Click="Button_Click" Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="22,264,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
+        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="22,264,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
         <Label Content="ФИО матери" HorizontalAlignment="Left" Margin="52,27,0,0" VerticalAlignment="Top" Width="84"/>
         <TextBox Text="{Binding FIOMA}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
         <Label Content="ФИО отца" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="84"/>

@@ -22,6 +22,49 @@ namespace SADIC
         public Kruj()
         {
             InitializeComponent();
+            DataTour.ItemsSource = EWnter.Qwer().Zanztia.ToList();
+        }
+
+        private void del_Click(object sender, RoutedEventArgs e)
+        {
+            var DEle =
+          DataTour.SelectedItems.Cast<Zanztia>().ToList();
+            var countRow = DEle.Count();
+            var res = MessageBox.Show($"Вы точно хотите удалить {countRow} записей?",
+           "Внимание!",
+            MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (res == MessageBoxResult.Yes)
+            {
+                try //команды могут выдавать ошибку, поэтому используем try catch
+                {
+                    EWnter.Qwer().Zanztia.RemoveRange(DEle);
+                    //БД обновляем
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Записи удалены!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            adZAna Win = new adZAna((sender as Button).DataContext as Zanztia, 1);
+            Win.Show();
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            adZAna Win = new adZAna((sender as Button).DataContext as Zanztia, 1);
+            Win.Show();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            DataTour.ItemsSource = EWnter.Qwer().Zanztia.ToList();
         }
     }
 }

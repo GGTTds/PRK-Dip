@@ -22,6 +22,51 @@ namespace SADIC
         public Gru()
         {
             InitializeComponent();
+            DataTour.ItemsSource = EWnter.Qwer().Group.ToList();
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            adGrup Win = new adGrup((sender as Button).DataContext as Group, 1);
+            Win.Show();
+        }
+
+        private void del_Click(object sender, RoutedEventArgs e)
+        {
+            var DEle =
+         DataTour.SelectedItems.Cast<Group>().ToList();
+            var countRow = DEle.Count();
+            var res = MessageBox.Show($"Вы точно хотите удалить {countRow} записей?",
+           "Внимание!",
+            MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (res == MessageBoxResult.Yes)
+            {
+                try //команды могут выдавать ошибку, поэтому используем try catch
+                {
+                    EWnter.Qwer().Group.RemoveRange(DEle);
+                    //БД обновляем
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Записи удалены!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+    
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            adGrup Win = new adGrup((sender as Button).DataContext as Group, 1);
+            Win.Show();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            EWnter.Qwer().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            DataTour.ItemsSource = EWnter.Qwer().Group.ToList();
         }
     }
 }
