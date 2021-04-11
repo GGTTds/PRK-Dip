@@ -18,7 +18,7 @@
         <Label Content="Запасной телефон" HorizontalAlignment="Left" Margin="52,204,0,0" VerticalAlignment="Top" Width="116"/>
         <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="215,264,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
         <TextBox x:Name="ew" Text="{Binding TelFAT}" HorizontalAlignment="Left" Height="23" Margin="182,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <TextBox Text="{Binding OtherTel}" HorizontalAlignment="Left" Height="23" Margin="182,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <TextBox Text="{Binding OtherTel}" HorizontalAlignment="Left" Height="23" Margin="182,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red" OpacityMask="Red"/>
 
     </Grid>
 </Window>
