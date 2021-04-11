@@ -31,7 +31,19 @@ namespace SADIC
 
         private void RG_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                System.Data.Entity.Core.Objects.ObjectParameter @VX;
+                VX = new System.Data.Entity.Core.Objects.ObjectParameter("V", typeof(int));
+                var s = EWnter.Qwer().Reg(fio.Text, tell.Text, log.Text, pas.Password, VX);
+                if (int.Parse(VX.Value.ToString()) == 1)
+                {
+                    this.Close();
+                    MessageBox.Show(" Вы успешно зарегестрировались", "Уведомление");
+                }
+                else { MessageBox.Show("Такой логин уже существует", "Ошибка"); }
+            }
+            catch { }
         }
     }
 }

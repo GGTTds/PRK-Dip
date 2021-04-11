@@ -27,8 +27,22 @@ namespace SADIC
 
         private void VX_Click(object sender, RoutedEventArgs e)
         {
-            NextMen ww = new NextMen()
-                ; ww.Show(); this.Close();
+            try
+            {
+                System.Data.Entity.Core.Objects.ObjectParameter VX;
+                VX = new System.Data.Entity.Core.Objects.ObjectParameter("Vix", typeof(int));
+                var w = EWnter.Qwer().Vxod(loggg.Text, passs.Password, VX);
+                if (int.Parse(VX.Value.ToString()) == 1)
+                {
+                    NextMen ww = new NextMen()
+                        ; ww.Show(); this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль", "Ошибка");
+                }
+            }
+            catch { }
         }
 
         private void RG_Click(object sender, RoutedEventArgs e)
