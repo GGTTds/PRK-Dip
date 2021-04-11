@@ -9,6 +9,6 @@ namespace SADIC
     class Static
     {
         public static string Name;
-        public static int Rol;
+        public static string Rol;
     }
 }

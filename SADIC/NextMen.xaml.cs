@@ -22,6 +22,7 @@ namespace SADIC
         public NextMen()
         {
             InitializeComponent();
+            Im.Content =$" Здравствуйте {Static.Name}";
             data111.Content = $" Сегодня: {DateTime.Now.ToLongDateString()}"; 
         }
 

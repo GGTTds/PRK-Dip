@@ -12,7 +12,7 @@
             <RowDefinition Height="36*"/>
         </Grid.RowDefinitions>
         <Image HorizontalAlignment="Left" Height="142" Margin="367,19,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
-        <Label Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="366,181,0,0" Width="139"/>
+        <Label x:Name="Im" Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,181,0,0" Width="283"/>
         <Button Click="chiq_Click" x:Name="chiq" Content="Дети" HorizontalAlignment="Left" Margin="34,24,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>

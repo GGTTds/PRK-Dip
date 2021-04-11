@@ -1,0 +1,28 @@
+﻿<Window x:Class="SADIC.ChilAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+        Title="Добавление" Height="464.781" Width="406.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FF72DAC3">
+        <Button Click="Button_Click" Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="21,371,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
+        <Label Content="FIO" HorizontalAlignment="Left" Margin="72,28,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox Text="{Binding FIO}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Родители" HorizontalAlignment="Left" Margin="72,74,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Группа" HorizontalAlignment="Left" Margin="72,123,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox Text="{Binding Grp}" HorizontalAlignment="Left" Height="23" Margin="182,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="72,166,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Адресс" HorizontalAlignment="Left" Margin="72,215,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox Text="{Binding Adress}" HorizontalAlignment="Left" Height="23" Margin="182,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <Label Content="Мероприятия" HorizontalAlignment="Left" Margin="72,261,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Кружок" HorizontalAlignment="Left" Margin="72,301,0,0" VerticalAlignment="Top" Width="96"/>
+        <ComboBox x:Name="wq3" SelectedItem="{Binding Parents}" DisplayMemberPath="FIOMA" HorizontalAlignment="Left" Margin="182,78,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="{x:Null}"/>
+        <ComboBox x:Name="wq1" SelectedItem="{Binding Event}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,265,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
+        <ComboBox  x:Name="wq" SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,305,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="214,371,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
+        <TextBox x:Name="ew" Text="{Binding DataBir}" HorizontalAlignment="Left" Height="23" Margin="182,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+
+    </Grid>
+</Window>

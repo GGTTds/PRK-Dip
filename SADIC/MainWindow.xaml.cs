@@ -34,6 +34,15 @@ namespace SADIC
                 var w = EWnter.Qwer().Vxod(loggg.Text, passs.Password, VX);
                 if (int.Parse(VX.Value.ToString()) == 1)
                 {
+                    System.Data.Entity.Core.Objects.ObjectParameter VX1;
+                    VX1 = new System.Data.Entity.Core.Objects.ObjectParameter("Ima", typeof(string));
+                    var s = EWnter.Qwer().FIO(loggg.Text, VX1);
+                    Static.Name = VX1.Value.ToString();
+                    System.Data.Entity.Core.Objects.ObjectParameter VX2;
+                    VX2 = new System.Data.Entity.Core.Objects.ObjectParameter("V", typeof(int));
+                    var g = EWnter.Qwer().Rol(loggg.Text, VX2);
+                    Static.Rol = VX2.Value.ToString();
+
                     NextMen ww = new NextMen()
                         ; ww.Show(); this.Close();
                 }
