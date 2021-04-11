@@ -25,6 +25,7 @@ namespace SADIC
         {
             InitializeComponent();
             ew.Text = DateTime.Now.ToString();
+            wq1_Copy.ItemsSource = EWnter.Qwer().Group.ToList();
             wq.ItemsSource = EWnter.Qwer().Zanztia.ToList();
             wq1.ItemsSource = EWnter.Qwer().Event.ToList();
             wq3.ItemsSource = EWnter.Qwer().Parents.ToList();

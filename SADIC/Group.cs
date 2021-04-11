@@ -17,6 +17,7 @@ namespace SADIC
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
+            this.Child = new HashSet<Child>();
             this.Tich = new HashSet<Tich>();
         }
     
@@ -24,6 +25,8 @@ namespace SADIC
         public string Name { get; set; }
         public string Opis { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Child> Child { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tich> Tich { get; set; }
     }

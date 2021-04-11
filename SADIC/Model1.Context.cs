@@ -22,14 +22,13 @@ namespace SADIC
             : base("name=EWnter")
         {
         }
-       public static EWnter Qwer()
+        public static EWnter Qwer()
         {
             if (_con == null)
                 _con = new EWnter();
             return _con;
 
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

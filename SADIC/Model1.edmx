@@ -95,6 +95,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Child_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="ID_Group" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Grp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Child_Parents">
           <End Role="Parents" Type="Self.Parents" Multiplicity="0..1" />
           <End Role="Child" Type="Self.Child" Multiplicity="*" />
@@ -200,6 +212,10 @@
             <End Role="Event" EntitySet="Event" />
             <End Role="Child" EntitySet="Child" />
           </AssociationSet>
+          <AssociationSet Name="FK_Child_Group" Association="Self.FK_Child_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
           <AssociationSet Name="FK_Child_Parents" Association="Self.FK_Child_Parents">
             <End Role="Parents" EntitySet="Parents" />
             <End Role="Child" EntitySet="Child" />
@@ -243,6 +259,7 @@
           <Property Name="Event" Type="Int32" />
           <Property Name="DopZan" Type="Int32" />
           <NavigationProperty Name="Event1" Relationship="Self.FK_Child_Event" FromRole="Child" ToRole="Event" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Child_Group" FromRole="Child" ToRole="Group" />
           <NavigationProperty Name="Parents" Relationship="Self.FK_Child_Parents" FromRole="Child" ToRole="Parents" />
           <NavigationProperty Name="Zanztia" Relationship="Self.FK_Child_Zanztia" FromRole="Child" ToRole="Zanztia" />
         </EntityType>
@@ -263,6 +280,7 @@
           <Property Name="ID_Group" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Child" Relationship="Self.FK_Child_Group" FromRole="Group" ToRole="Child" />
           <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Group" FromRole="Group" ToRole="Tich" />
         </EntityType>
         <EntityType Name="Parents">
@@ -331,6 +349,18 @@
             </Principal>
             <Dependent Role="Child">
               <PropertyRef Name="Event" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Child_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="ID_Group" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Grp" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -417,6 +447,10 @@
           <EntitySet Name="Zanztia" EntityType="Self.Zanztia" />
           <AssociationSet Name="FK_Child_Event" Association="Self.FK_Child_Event">
             <End Role="Event" EntitySet="Event" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Group" Association="Self.FK_Child_Group">
+            <End Role="Group" EntitySet="Group" />
             <End Role="Child" EntitySet="Child" />
           </AssociationSet>
           <AssociationSet Name="FK_Child_Parents" Association="Self.FK_Child_Parents">

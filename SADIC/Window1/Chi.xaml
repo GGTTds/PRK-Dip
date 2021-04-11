@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Группа" Binding="{Binding Grp}"/>
                 <DataGridTextColumn Header="Дата рождения" Binding="{Binding DataBir}"/>
                 <DataGridTextColumn Header="Адресс" Binding="{Binding Adress}"/>
-                <DataGridTextColumn Header="Мероприятия" Binding="{Binding Event.Name}"/>
+                <DataGridTextColumn Header="Мероприятия" Binding="{Binding Event1.Name}"/>
                 <DataGridTextColumn Header="Кружки" Binding="{Binding Zanztia.Name}"/>
             </DataGrid.Columns>
         </DataGrid>

@@ -24,6 +24,7 @@ namespace SADIC
         public Nullable<int> DopZan { get; set; }
     
         public virtual Event Event1 { get; set; }
+        public virtual Group Group { get; set; }
         public virtual Parents Parents { get; set; }
         public virtual Zanztia Zanztia { get; set; }
     }
