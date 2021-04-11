@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SADModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="ID_Child" />
+          </Key>
+          <Property Name="ID_Child" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="170" />
+          <Property Name="Paren" Type="int" />
+          <Property Name="Grp" Type="int" />
+          <Property Name="DataBir" Type="datetime" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="150" />
+          <Property Name="Event" Type="int" />
+          <Property Name="DopZan" Type="int" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID_Event" />
+          </Key>
+          <Property Name="ID_Event" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="120" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="ID_Group" />
+          </Key>
+          <Property Name="ID_Group" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Parents">
+          <Key>
+            <PropertyRef Name="ID_Parent" />
+          </Key>
+          <Property Name="ID_Parent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIOMA" Type="nvarchar" MaxLength="150" />
+          <Property Name="TelMA" Type="nvarchar" MaxLength="50" />
+          <Property Name="FIOFAT" Type="nvarchar" MaxLength="150" />
+          <Property Name="TelFAT" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTel" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Roul">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tich">
+          <Key>
+            <PropertyRef Name="ID_Tich" />
+          </Key>
+          <Property Name="ID_Tich" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIOTic" Type="nvarchar" MaxLength="150" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrpForChil" Type="int" />
+          <Property Name="ToEvent" Type="int" />
+          <Property Name="ToZant" Type="int" />
+          <Property Name="login_Tic" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rol" Type="int" />
+        </EntityType>
+        <EntityType Name="Zanztia">
+          <Key>
+            <PropertyRef Name="ID_Zan" />
+          </Key>
+          <Property Name="ID_Zan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <Association Name="FK_Child_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="ID_Event" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Event" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Child_Parents">
+          <End Role="Parents" Type="Self.Parents" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parents">
+              <PropertyRef Name="ID_Parent" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Paren" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Child_Zanztia">
+          <End Role="Zanztia" Type="Self.Zanztia" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zanztia">
+              <PropertyRef Name="ID_Zan" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="DopZan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="ID_Event" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="ToEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="ID_Group" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="GrpForChil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Roul">
+          <End Role="Roul" Type="Self.Roul" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roul">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Zanztia">
+          <End Role="Zanztia" Type="Self.Zanztia" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zanztia">
+              <PropertyRef Name="ID_Zan" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="ToZant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="FIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="logww" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ima" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Reg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FIo" Type="nvarchar" Mode="In" />
+          <Parameter Name="tel" Type="nvarchar" Mode="In" />
+          <Parameter Name="log" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pass" Type="nvarchar" Mode="In" />
+          <Parameter Name="V" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="Rol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="log" Type="nvarchar" Mode="In" />
+          <Parameter Name="V" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="Vxod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="logg" Type="nvarchar" Mode="In" />
+          <Parameter Name="pasWr" Type="nvarchar" Mode="In" />
+          <Parameter Name="Vix" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="Хранилище SADModelContainer">
+          <EntitySet Name="Child" EntityType="Self.Child" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parents" EntityType="Self.Parents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roul" EntityType="Self.Roul" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tich" EntityType="Self.Tich" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zanztia" EntityType="Self.Zanztia" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Child_Event" Association="Self.FK_Child_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Parents" Association="Self.FK_Child_Parents">
+            <End Role="Parents" EntitySet="Parents" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Zanztia" Association="Self.FK_Child_Zanztia">
+            <End Role="Zanztia" EntitySet="Zanztia" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Event" Association="Self.FK_Tich_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Group" Association="Self.FK_Tich_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Roul" Association="Self.FK_Tich_Roul">
+            <End Role="Roul" EntitySet="Roul" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Zanztia" Association="Self.FK_Tich_Zanztia">
+            <End Role="Zanztia" EntitySet="Zanztia" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SADModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="ID_Child" />
+          </Key>
+          <Property Name="ID_Child" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="170" FixedLength="false" Unicode="true" />
+          <Property Name="Paren" Type="Int32" />
+          <Property Name="Grp" Type="Int32" />
+          <Property Name="DataBir" Type="DateTime" Precision="3" />
+          <Property Name="Adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Event" Type="Int32" />
+          <Property Name="DopZan" Type="Int32" />
+          <NavigationProperty Name="Event1" Relationship="Self.FK_Child_Event" FromRole="Child" ToRole="Event" />
+          <NavigationProperty Name="Parents" Relationship="Self.FK_Child_Parents" FromRole="Child" ToRole="Parents" />
+          <NavigationProperty Name="Zanztia" Relationship="Self.FK_Child_Zanztia" FromRole="Child" ToRole="Zanztia" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID_Event" />
+          </Key>
+          <Property Name="ID_Event" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Child" Relationship="Self.FK_Child_Event" FromRole="Event" ToRole="Child" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Event" FromRole="Event" ToRole="Tich" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="ID_Group" />
+          </Key>
+          <Property Name="ID_Group" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Group" FromRole="Group" ToRole="Tich" />
+        </EntityType>
+        <EntityType Name="Parents">
+          <Key>
+            <PropertyRef Name="ID_Parent" />
+          </Key>
+          <Property Name="ID_Parent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIOMA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TelMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIOFAT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TelFAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Child" Relationship="Self.FK_Child_Parents" FromRole="Parents" ToRole="Child" />
+        </EntityType>
+        <EntityType Name="Roul">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Roul" FromRole="Roul" ToRole="Tich" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tich">
+          <Key>
+            <PropertyRef Name="ID_Tich" />
+          </Key>
+          <Property Name="ID_Tich" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIOTic" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrpForChil" Type="Int32" />
+          <Property Name="ToEvent" Type="Int32" />
+          <Property Name="ToZant" Type="Int32" />
+          <Property Name="login_Tic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="Int32" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Tich_Event" FromRole="Tich" ToRole="Event" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Tich_Group" FromRole="Tich" ToRole="Group" />
+          <NavigationProperty Name="Roul" Relationship="Self.FK_Tich_Roul" FromRole="Tich" ToRole="Roul" />
+          <NavigationProperty Name="Zanztia" Relationship="Self.FK_Tich_Zanztia" FromRole="Tich" ToRole="Zanztia" />
+        </EntityType>
+        <EntityType Name="Zanztia">
+          <Key>
+            <PropertyRef Name="ID_Zan" />
+          </Key>
+          <Property Name="ID_Zan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Child" Relationship="Self.FK_Child_Zanztia" FromRole="Zanztia" ToRole="Child" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Zanztia" FromRole="Zanztia" ToRole="Tich" />
+        </EntityType>
+        <Association Name="FK_Child_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="ID_Event" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Event" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Child_Parents">
+          <End Role="Parents" Type="Self.Parents" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parents">
+              <PropertyRef Name="ID_Parent" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="Paren" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Child_Zanztia">
+          <End Role="Zanztia" Type="Self.Zanztia" Multiplicity="0..1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zanztia">
+              <PropertyRef Name="ID_Zan" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="DopZan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Event">
+          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="ID_Event" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="ToEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="ID_Group" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="GrpForChil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Roul">
+          <End Role="Roul" Type="Self.Roul" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roul">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tich_Zanztia">
+          <End Role="Zanztia" Type="Self.Zanztia" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zanztia">
+              <PropertyRef Name="ID_Zan" />
+            </Principal>
+            <Dependent Role="Tich">
+              <PropertyRef Name="ToZant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EWnter" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Child" EntityType="Self.Child" />
+          <EntitySet Name="Event" EntityType="Self.Event" />
+          <EntitySet Name="Group" EntityType="Self.Group" />
+          <EntitySet Name="Parents" EntityType="Self.Parents" />
+          <EntitySet Name="Roul" EntityType="Self.Roul" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tich" EntityType="Self.Tich" />
+          <EntitySet Name="Zanztia" EntityType="Self.Zanztia" />
+          <AssociationSet Name="FK_Child_Event" Association="Self.FK_Child_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Parents" Association="Self.FK_Child_Parents">
+            <End Role="Parents" EntitySet="Parents" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Zanztia" Association="Self.FK_Child_Zanztia">
+            <End Role="Zanztia" EntitySet="Zanztia" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Event" Association="Self.FK_Tich_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Group" Association="Self.FK_Tich_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Roul" Association="Self.FK_Tich_Roul">
+            <End Role="Roul" EntitySet="Roul" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tich_Zanztia" Association="Self.FK_Tich_Zanztia">
+            <End Role="Zanztia" EntitySet="Zanztia" />
+            <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <FunctionImport Name="FIO">
+            <Parameter Name="logww" Mode="In" Type="String" />
+            <Parameter Name="Ima" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Reg">
+            <Parameter Name="FIo" Mode="In" Type="String" />
+            <Parameter Name="tel" Mode="In" Type="String" />
+            <Parameter Name="log" Mode="In" Type="String" />
+            <Parameter Name="Pass" Mode="In" Type="String" />
+            <Parameter Name="V" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Rol">
+            <Parameter Name="log" Mode="In" Type="String" />
+            <Parameter Name="V" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Vxod">
+            <Parameter Name="logg" Mode="In" Type="String" />
+            <Parameter Name="pasWr" Mode="In" Type="String" />
+            <Parameter Name="Vix" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SADModelContainer" CdmEntityContainer="EWnter">
+          <EntitySetMapping Name="Child">
+            <EntityTypeMapping TypeName="SADModel.Child">
+              <MappingFragment StoreEntitySet="Child">
+                <ScalarProperty Name="ID_Child" ColumnName="ID_Child" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Paren" ColumnName="Paren" />
+                <ScalarProperty Name="Grp" ColumnName="Grp" />
+                <ScalarProperty Name="DataBir" ColumnName="DataBir" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="DopZan" ColumnName="DopZan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event">
+            <EntityTypeMapping TypeName="SADModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="ID_Event" ColumnName="ID_Event" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group">
+            <EntityTypeMapping TypeName="SADModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="ID_Group" ColumnName="ID_Group" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parents">
+            <EntityTypeMapping TypeName="SADModel.Parents">
+              <MappingFragment StoreEntitySet="Parents">
+                <ScalarProperty Name="ID_Parent" ColumnName="ID_Parent" />
+                <ScalarProperty Name="FIOMA" ColumnName="FIOMA" />
+                <ScalarProperty Name="TelMA" ColumnName="TelMA" />
+                <ScalarProperty Name="FIOFAT" ColumnName="FIOFAT" />
+                <ScalarProperty Name="TelFAT" ColumnName="TelFAT" />
+                <ScalarProperty Name="OtherTel" ColumnName="OtherTel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roul">
+            <EntityTypeMapping TypeName="SADModel.Roul">
+              <MappingFragment StoreEntitySet="Roul">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SADModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tich">
+            <EntityTypeMapping TypeName="SADModel.Tich">
+              <MappingFragment StoreEntitySet="Tich">
+                <ScalarProperty Name="ID_Tich" ColumnName="ID_Tich" />
+                <ScalarProperty Name="FIOTic" ColumnName="FIOTic" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="GrpForChil" ColumnName="GrpForChil" />
+                <ScalarProperty Name="ToEvent" ColumnName="ToEvent" />
+                <ScalarProperty Name="ToZant" ColumnName="ToZant" />
+                <ScalarProperty Name="login_Tic" ColumnName="login_Tic" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zanztia">
+            <EntityTypeMapping TypeName="SADModel.Zanztia">
+              <MappingFragment StoreEntitySet="Zanztia">
+                <ScalarProperty Name="ID_Zan" ColumnName="ID_Zan" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FIO" FunctionName="Хранилище SADModel.FIO" />
+          <FunctionImportMapping FunctionImportName="Reg" FunctionName="Хранилище SADModel.Reg" />
+          <FunctionImportMapping FunctionImportName="Rol" FunctionName="Хранилище SADModel.Rol" />
+          <FunctionImportMapping FunctionImportName="Vxod" FunctionName="Хранилище SADModel.Vxod" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

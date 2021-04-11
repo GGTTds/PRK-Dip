@@ -23,5 +23,15 @@ namespace SADIC
         {
             InitializeComponent();
         }
+
+        private void VX_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RG_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

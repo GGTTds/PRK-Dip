@@ -12,7 +12,7 @@
         <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Height="23" Width="108"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="133,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF52200" BorderBrush="Red"/>
         <PasswordBox Height="23" HorizontalAlignment="Left" Margin="133,102,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF50D0D" BorderBrush="Red"/>
-        <Button Click="VX_Click" x:Name="VX" Content="Вход" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="136" Background="#FFFF1212" OpacityMask="Red"/>
-        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="172,155,0,0" VerticalAlignment="Top" Width="136" Background="#FF1FF11F" OpacityMask="Red"/>
+        <Button Click="VX_Click" x:Name="VX" Content="Вход" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="136" Background="#FFFF1212" OpacityMask="Red" Height="27"/>
+        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="172,155,0,0" VerticalAlignment="Top" Width="136" Background="#FF1FF11F" OpacityMask="Red" Height="27"/>
     </Grid>
 </Window>
