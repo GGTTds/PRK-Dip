@@ -29,6 +29,7 @@ namespace SADIC
             return _con;
 
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

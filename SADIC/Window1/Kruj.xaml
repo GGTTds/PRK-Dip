@@ -10,8 +10,6 @@
         <Label x:Name="Now" Content="Кружки" Margin="250,5,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="96" />
         <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="213" Margin="5,47,0,0" VerticalAlignment="Top" Width="374" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zan}"/>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -19,6 +17,9 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Номер" Binding="{Binding ID_Zan}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+               
             </DataGrid.Columns>
         </DataGrid>
         <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="416,172,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>

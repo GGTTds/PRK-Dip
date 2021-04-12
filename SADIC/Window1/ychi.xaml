@@ -23,6 +23,8 @@
                 <DataGridTextColumn Header="Руководство группой" Binding="{Binding Group.Name}"/>
                 <DataGridTextColumn Header="Назначение на мероприятие" Binding="{Binding Event.Name}"/>
                 <DataGridTextColumn Header="Руководство кружков" Binding="{Binding Zanztia.Name}"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login_Tic}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="678,173,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>

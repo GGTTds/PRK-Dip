@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 namespace SADIC
 {
     /// <summary>
-    /// Логика взаимодействия для adZAna.xaml
+    /// Логика взаимодействия для ADPred.xaml
     /// </summary>
-    public partial class adZAna : Window
+    public partial class ADPred : Window
     {
-        private Zanztia _currentPost = new Zanztia();
+        private Parents _currentPost = new Parents();
         private int num = 0;
-        public adZAna(Zanztia Se2Wq, int k)
+        public ADPred(Parents Se2Wq, int k)
         {
             InitializeComponent();
             if (Se2Wq != null)
@@ -34,13 +34,23 @@ namespace SADIC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
-                if (num == 0)
-                    EWnter.Qwer().Zanztia.Add(_currentPost);
-                EWnter.Qwer().SaveChanges();
-                MessageBox.Show("Запись сохранена!");
-                Close();
+                StringBuilder Error = new StringBuilder();
+                if (mat.Text.Length == 0)
+                    Error.Append("Введите ФИО матери \n");
+                if (mat1.Text.Length == 0)
+                    Error.Append("Введите номер телефона матери \n");
+                if (Error.Length == 0)
+                {
+                    if (num == 0)
+                        EWnter.Qwer().Parents.Add(_currentPost);
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Запись сохранена!");
+                    Close();
+                }
+                else { MessageBox.Show(Error.ToString()); }
             }
             catch (Exception ex)
             {

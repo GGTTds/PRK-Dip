@@ -23,6 +23,15 @@ namespace SADIC
         {
             InitializeComponent();
             DataTour.ItemsSource = EWnter.Qwer().Tich.ToList();
+            if (int.Parse(Static.Rol) == 1)
+            {
+                Bis();
+            }
+            else
+            {
+                DataTour.Columns[7].Visibility = Visibility.Visible;
+                DataTour.Columns[8].Visibility = Visibility.Visible;
+            }
         }
 
         private void toFio_TextChanged(object sender, TextChangedEventArgs e)
@@ -78,6 +87,12 @@ namespace SADIC
         {
             ADDTich ww = new ADDTich((sender as Button).DataContext as Tich, 1);
             ww.Show();
+        }
+        public void Bis()
+        {
+            DataTour.Columns[0].Visibility = Visibility.Hidden;
+            add.Visibility = Visibility.Hidden;
+            del.Visibility = Visibility.Hidden;
         }
     }
 }

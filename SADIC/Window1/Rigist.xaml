@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="Регистрация" Height="252.126" Width="351.391" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Регистрация" Height="245.685" Width="351.391" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="White">
     <Grid Background="#FF43B9DC">
         <Label Content="Регистрация" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,10,0,0" Height="31" Width="132" FontWeight="Bold" FontSize="16"/>
         <Label Content="Введите ФИО:" HorizontalAlignment="Left" Margin="26,56,0,0" VerticalAlignment="Top" Width="90"/>

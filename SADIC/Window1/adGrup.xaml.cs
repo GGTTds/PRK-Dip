@@ -15,20 +15,15 @@ using System.Windows.Shapes;
 namespace SADIC
 {
     /// <summary>
-    /// Логика взаимодействия для ChilAdd.xaml
+    /// Логика взаимодействия для adGrup.xaml
     /// </summary>
-    public partial class ChilAdd : Window
+    public partial class adGrup : Window
     {
-        private Child _currentPost = new Child();
+        private Group _currentPost = new Group();
         private int num = 0;
-        public ChilAdd(Child Se2Wq, int k)
+        public adGrup(Group Se2Wq, int k)
         {
             InitializeComponent();
-            ew.Text = DateTime.Now.ToString();
-            wq1_Copy.ItemsSource = EWnter.Qwer().Group.ToList();
-            wq.ItemsSource = EWnter.Qwer().Zanztia.ToList();
-            wq1.ItemsSource = EWnter.Qwer().Event.ToList();
-            wq3.ItemsSource = EWnter.Qwer().Parents.ToList();
             if (Se2Wq != null)
             {
                 _currentPost = Se2Wq;
@@ -39,21 +34,25 @@ namespace SADIC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-          
             try
             {
-                if (num == 0)
-                    EWnter.Qwer().Child.Add(_currentPost);
-                EWnter.Qwer().SaveChanges();
-                MessageBox.Show("Запись сохранена!");
-                Close();
+                StringBuilder Error = new StringBuilder();
+                if (nn.Text.Length == 0)
+                    Error.Append("Введите наименование \n");
+                if (Error.Length == 0)
+                {
+                    if (num == 0)
+                        EWnter.Qwer().Group.Add(_currentPost);
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Запись сохранена!");
+                    Close();
+                }
+                else { MessageBox.Show(Error.ToString()); }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

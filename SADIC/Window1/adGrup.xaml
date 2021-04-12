@@ -9,7 +9,7 @@
     <Grid Background="#FF72DAC3">
         <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="23,138,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
         <Label Content="Наименование" HorizontalAlignment="Left" Margin="43,27,0,0" VerticalAlignment="Top" Width="99"/>
-        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <TextBox x:Name="nn" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
         <Label Content="Описание" HorizontalAlignment="Left" Margin="43,74,0,0" VerticalAlignment="Top" Width="105"/>
         <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="216,138,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
         <TextBox x:Name="ew" Text="{Binding Opis}" HorizontalAlignment="Left" Height="23" Margin="182,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>

@@ -15,19 +15,15 @@ using System.Windows.Shapes;
 namespace SADIC
 {
     /// <summary>
-    /// Логика взаимодействия для ADDTich.xaml
+    /// Логика взаимодействия для ADEv.xaml
     /// </summary>
-    public partial class ADDTich : Window
+    public partial class ADEv : Window
     {
-        private Tich _currentPost = new Tich();
+        private Event _currentPost = new Event();
         private int num = 0;
-        public ADDTich(Tich Se2Wq, int k)
+        public ADEv(Event Se2Wq, int k)
         {
             InitializeComponent();
-            gr.ItemsSource = EWnter.Qwer().Group.ToList();
-            mer.ItemsSource = EWnter.Qwer().Event.ToList();
-            za.ItemsSource = EWnter.Qwer().Zanztia.ToList();
-            re.ItemsSource = EWnter.Qwer().Roul.ToList();
             if (Se2Wq != null)
             {
                 _currentPost = Se2Wq;
@@ -40,11 +36,21 @@ namespace SADIC
         {
             try
             {
-                if (num == 0)
-                    EWnter.Qwer().Tich.Add(_currentPost);
-                EWnter.Qwer().SaveChanges();
-                MessageBox.Show("Запись сохранена!");
-                Close();
+                _currentPost.Date = eeq.SelectedDate;
+                StringBuilder Error = new StringBuilder();
+                if (nn.Text.Length == 0)
+                    Error.Append("Введите наименование \n");
+                if (eeq.Text.Length == 0)
+                    Error.Append("Введите дату \n");
+                if (Error.Length == 0)
+                {
+                    if (num == 0)
+                        EWnter.Qwer().Event.Add(_currentPost);
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Запись сохранена!");
+                    Close();
+                }
+                else { MessageBox.Show(Error.ToString()); }
             }
             catch (Exception ex)
             {

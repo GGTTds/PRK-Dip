@@ -1,0 +1,29 @@
+﻿<Window x:Class="SADIC.ADDTich"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+        Title="Добавление" Height="444.781" Width="410.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="ner" Background="#FF72DAC3">
+        <Button x:Name="ad" Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="29,353,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="52,27,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ff" Text="{Binding FIOTic}" HorizontalAlignment="Left" Height="23" Margin="199,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="tt" Text="{Binding Tel}" HorizontalAlignment="Left" Height="23" Margin="199,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Руководит группой" HorizontalAlignment="Left" Margin="52,103,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label Content="Участие в мероприятии" HorizontalAlignment="Left" Margin="52,138,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label Content="Руководит занятием" HorizontalAlignment="Left" Margin="52,173,0,0" VerticalAlignment="Top" Width="135"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="222,353,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="52,215,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="ll" Text="{Binding TelMA}" HorizontalAlignment="Left" Height="23" Margin="199,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="52,261,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="pp" Text="{Binding OtherTel}" HorizontalAlignment="Left" Height="23" Margin="199,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="52,302,0,0" VerticalAlignment="Top" Width="116"/>
+        <ComboBox SelectedItem="{Binding Group}" DisplayMemberPath="Name"  x:Name="gr" HorizontalAlignment="Left" Margin="199,103,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Event}" DisplayMemberPath="Name" x:Name="mer" HorizontalAlignment="Left" Margin="199,142,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="{x:Null}" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" x:Name="za" HorizontalAlignment="Left" Margin="199,177,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Black" OpacityMask="Red" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Roul}" DisplayMemberPath="Name" x:Name="re" HorizontalAlignment="Left" Margin="199,306,0,0" VerticalAlignment="Top" Width="120" BorderBrush="Red" Background="{x:Null}" OpacityMask="Red"/>
+    </Grid>
+</Window>

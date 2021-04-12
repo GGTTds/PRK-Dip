@@ -67,22 +67,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ADDTich.xaml.cs">
+    <Compile Include="Window1\ADDTich.xaml.cs">
       <DependentUpon>ADDTich.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ADEv.xaml.cs">
+    <Compile Include="Window1\ADEv.xaml.cs">
       <DependentUpon>ADEv.xaml</DependentUpon>
     </Compile>
-    <Compile Include="adGrup.xaml.cs">
+    <Compile Include="Window1\adGrup.xaml.cs">
       <DependentUpon>adGrup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ADPred.xaml.cs">
+    <Compile Include="Window1\ADPred.xaml.cs">
       <DependentUpon>ADPred.xaml</DependentUpon>
     </Compile>
-    <Compile Include="adZAna.xaml.cs">
+    <Compile Include="Window1\adZAna.xaml.cs">
       <DependentUpon>adZAna.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChilAdd.xaml.cs">
+    <Compile Include="Window1\ChilAdd.xaml.cs">
       <DependentUpon>ChilAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Child.cs">
@@ -152,27 +152,27 @@
     <Compile Include="Zanztia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="ADDTich.xaml">
+    <Page Include="Window1\ADDTich.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ADEv.xaml">
+    <Page Include="Window1\ADEv.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="adGrup.xaml">
+    <Page Include="Window1\adGrup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ADPred.xaml">
+    <Page Include="Window1\ADPred.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="adZAna.xaml">
+    <Page Include="Window1\adZAna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChilAdd.xaml">
+    <Page Include="Window1\ChilAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,15 +260,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="kisspng-scalable-vector-graphics-computer-icons-clip-art-i-our-landlord-amp-property-management-software-is-5c0886e4c14356.png" />
+    <Resource Include="Imag\kisspng-scalable-vector-graphics-computer-icons-clip-art-i-our-landlord-amp-property-management-software-is-5c0886e4c14356.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="e997cd42dd70d41fabf5ed4cfeadf9d3.png" />
+    <Resource Include="Imag\e997cd42dd70d41fabf5ed4cfeadf9d3.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="e997cd42dd70d41fabf5ed4cfeadf9d3.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

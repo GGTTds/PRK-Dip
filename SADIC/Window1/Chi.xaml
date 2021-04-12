@@ -18,10 +18,10 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Child}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
+                <DataGridTextColumn Header="ФИО ребенка" Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Мать" Binding="{Binding Parents.FIOMA}"/>
                 <DataGridTextColumn Header="Отец" Binding="{Binding Parents.FIOFAT}"/>
-                <DataGridTextColumn Header="Группа" Binding="{Binding Grp}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Group.Name}"/>
                 <DataGridTextColumn Header="Дата рождения" Binding="{Binding DataBir}"/>
                 <DataGridTextColumn Header="Адресс" Binding="{Binding Adress}"/>
                 <DataGridTextColumn Header="Мероприятия" Binding="{Binding Event1.Name}"/>

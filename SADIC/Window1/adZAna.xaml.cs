@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 namespace SADIC
 {
     /// <summary>
-    /// Логика взаимодействия для ADEv.xaml
+    /// Логика взаимодействия для adZAna.xaml
     /// </summary>
-    public partial class ADEv : Window
+    public partial class adZAna : Window
     {
-        private Event _currentPost = new Event();
+        private Zanztia _currentPost = new Zanztia();
         private int num = 0;
-        public ADEv(Event Se2Wq, int k)
+        public adZAna(Zanztia Se2Wq, int k)
         {
             InitializeComponent();
             if (Se2Wq != null)
@@ -36,11 +36,18 @@ namespace SADIC
         {
             try
             {
-                if (num == 0)
-                    EWnter.Qwer().Event.Add(_currentPost);
-                EWnter.Qwer().SaveChanges();
-                MessageBox.Show("Запись сохранена!");
-                Close();
+                StringBuilder Error = new StringBuilder();
+                if (qwe.Text.Length == 0)
+                    Error.Append("Введите наименование \n");
+                if (Error.Length == 0)
+                {
+                    if (num == 0)
+                        EWnter.Qwer().Zanztia.Add(_currentPost);
+                    EWnter.Qwer().SaveChanges();
+                    MessageBox.Show("Запись сохранена!");
+                    Close();
+                }
+                else { MessageBox.Show(Error.ToString()); }
             }
             catch (Exception ex)
             {
