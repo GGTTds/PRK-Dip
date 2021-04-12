@@ -23,6 +23,10 @@ namespace SADIC
         {
             InitializeComponent();
             DataTour.ItemsSource = EWnter.Qwer().Child.ToList();
+            if (int.Parse(Static.Rol) == 1)
+            {
+                Bis();
+            }
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
@@ -72,7 +76,12 @@ namespace SADIC
             { DataTour.ItemsSource = EWnter.Qwer().Child.ToList(); }
             DataTour.ItemsSource = ss;
         }
-
+        public void Bis()
+        {
+            DataTour.Columns[0].Visibility = Visibility.Hidden;
+            add.Visibility = Visibility.Hidden;
+            del.Visibility = Visibility.Hidden;
+        }
         private void Window_Activated(object sender, EventArgs e)
         {
             EWnter.Qwer().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
