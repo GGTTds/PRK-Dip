@@ -23,5 +23,18 @@ namespace SADIC
         {
             InitializeComponent();
         }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+           if( e.Key == Key.Enter)
+            {
+                if (ps1.Password == "123456")
+                {
+                    Rigist ww = new Rigist();
+                    ww.Show();
+                    this.Close();
+                }
+            }
+        }
     }
 }

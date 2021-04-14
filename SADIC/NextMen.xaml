@@ -13,32 +13,32 @@
         </Grid.RowDefinitions>
         <Image HorizontalAlignment="Left" Height="142" Margin="367,19,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
         <Label x:Name="Im" Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,181,0,0" Width="283"/>
-        <Button Click="chiq_Click" x:Name="chiq" Content="Дети" HorizontalAlignment="Left" Margin="34,24,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="chiq_Click" x:Name="chiq" Content="Студенты" HorizontalAlignment="Left" Margin="33,221,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Click="rod_Click" x:Name="rod" Content="Родители" HorizontalAlignment="Left" Margin="34,73,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="rod_Click" x:Name="rod" Content="Родители" HorizontalAlignment="Left" Margin="33,270,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Click="grou_Click" x:Name="grou" Content="Группы" HorizontalAlignment="Left" Margin="34,122,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="grou_Click" x:Name="grou" Content="Группы" HorizontalAlignment="Left" Margin="33,32,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Click="mer_Click" x:Name="mer" Content="Мероприятия" HorizontalAlignment="Left" Margin="34,262,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="mer_Click" x:Name="mer" Content="Мероприятия" HorizontalAlignment="Left" Margin="33,172,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Click="kry_Click" x:Name="kry" Content="Кружки" HorizontalAlignment="Left" Margin="34,214,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="kry_Click" x:Name="kry" Content="Доп занятия" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Click="ys_Click" x:Name="ys" Content="Учителя" HorizontalAlignment="Left" Margin="34,169,0,0" VerticalAlignment="Top" Width="116" Height="30">
+        <Button Click="ys_Click" x:Name="ys" Content="Преподаватели" HorizontalAlignment="Left" Margin="33,79,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

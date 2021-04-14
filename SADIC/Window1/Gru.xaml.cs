@@ -23,6 +23,17 @@ namespace SADIC
         {
             InitializeComponent();
             DataTour.ItemsSource = EWnter.Qwer().Group.ToList();
+            if (int.Parse(Static.Rol) == 1)
+            {
+                Bis();
+            }
+           
+        }
+        public void Bis()
+        {
+            DataTour.Columns[0].Visibility = Visibility.Hidden;
+            add.Visibility = Visibility.Hidden;
+            del.Visibility = Visibility.Hidden;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)

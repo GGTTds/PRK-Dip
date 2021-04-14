@@ -56,8 +56,15 @@ namespace SADIC
 
         private void RG_Click(object sender, RoutedEventArgs e)
         {
-            Rigist ww = new Rigist()
-               ; ww.Show(); 
+            ToMENU ww = new ToMENU();
+            ww.Show();
+        }
+
+        private void RG_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Static.Rol = "1";
+            NextMen ww = new NextMen()
+                       ; ww.Show(); this.Close();
         }
     }
 }

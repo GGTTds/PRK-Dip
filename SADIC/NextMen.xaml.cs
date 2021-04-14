@@ -24,6 +24,12 @@ namespace SADIC
             InitializeComponent();
             Im.Content =$" Здравствуйте {Static.Name}";
             data111.Content = $" Сегодня: {DateTime.Now.ToLongDateString()}"; 
+            if(int.Parse(Static.Rol) == 1)
+            {
+                Im.Content = "";
+                chiq.Visibility = Visibility.Hidden;
+                rod.Visibility = Visibility.Hidden;
+            }
         }
 
         private void chiq_Click(object sender, RoutedEventArgs e)

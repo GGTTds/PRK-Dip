@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="ToMENU" Height="450" Width="800">
+        Title="ToMENU" Height="39.416" Width="324.339" WindowStyle="None" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
     <Grid>
-        
+        <PasswordBox x:Name="ps1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="317" Height="30"/>
+
     </Grid>
 </Window>
