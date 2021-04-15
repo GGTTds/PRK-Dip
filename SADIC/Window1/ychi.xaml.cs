@@ -27,11 +27,15 @@ namespace SADIC
             {
                 Bis();
             }
-            else
+            if (int.Parse(Static.Rol) == 3)
             {
                 DataTour.Columns[7].Visibility = Visibility.Visible;
                 DataTour.Columns[8].Visibility = Visibility.Visible;
             }
+            if (int.Parse(Static.Rol) == 2)
+            {
+                Bis();
+            }    
         }
 
         private void toFio_TextChanged(object sender, TextChangedEventArgs e)
