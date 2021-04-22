@@ -40,6 +40,12 @@ namespace SADIC
                     }
                 }
             }
+            if (e.Key == Key.Escape)
+            {
+                
+                    this.Close();
+                
+            }
         }
     }
 }
