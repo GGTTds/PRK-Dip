@@ -8,17 +8,17 @@
         Title="Добавление" Height="349.781" Width="381.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FF72DAC3">
         <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="22,264,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
-        <Label Content="ФИО матери" HorizontalAlignment="Left" Margin="52,27,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="mat" Text="{Binding FIOMA}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="ФИО матери" HorizontalAlignment="Left" Margin="52,12,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="mat" Text="{Binding FIOMA}" HorizontalAlignment="Left" Height="35" Margin="182,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
         <Label Content="ФИО отца" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="ot" Text="{Binding FIOFAT}" HorizontalAlignment="Left" Height="23" Margin="182,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
-        <Label Content="Телефон отца" HorizontalAlignment="Left" Margin="51,109,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Телефон матери" HorizontalAlignment="Left" Margin="52,158,0,0" VerticalAlignment="Top" Width="104"/>
-        <TextBox x:Name="mat1" Text="{Binding TelMA}" HorizontalAlignment="Left" Height="23" Margin="182,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <Label Content="Запасной телефон" HorizontalAlignment="Left" Margin="52,204,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="ot" Text="{Binding FIOFAT}" HorizontalAlignment="Left" Height="35" Margin="182,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Телефон отца" HorizontalAlignment="Left" Margin="51,117,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Телефон матери" HorizontalAlignment="Left" Margin="52,165,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="mat1" Text="{Binding TelMA}" HorizontalAlignment="Left" Height="23" Margin="182,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <Label Content="Запасной телефон" HorizontalAlignment="Left" Margin="52,212,0,0" VerticalAlignment="Top" Width="116"/>
         <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="215,264,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
-        <TextBox x:Name="ew" Text="{Binding TelFAT}" HorizontalAlignment="Left" Height="23" Margin="182,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <TextBox Text="{Binding OtherTel}" HorizontalAlignment="Left" Height="23" Margin="182,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red" OpacityMask="Red"/>
+        <TextBox x:Name="ew" Text="{Binding TelFAT}" HorizontalAlignment="Left" Height="23" Margin="182,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <TextBox Text="{Binding OtherTel}" HorizontalAlignment="Left" Height="23" Margin="182,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red" OpacityMask="Red"/>
 
     </Grid>
 </Window>

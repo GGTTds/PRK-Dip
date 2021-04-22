@@ -32,7 +32,12 @@ namespace SADIC
                 {
                     Rigist ww = new Rigist();
                     ww.Show();
-                    this.Close();
+                    if (e.Key == Key.Escape)
+                    {
+
+                        this.Close();
+
+                    }
                 }
             }
         }

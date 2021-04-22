@@ -12,12 +12,12 @@
         <Label Content="Введите телефон:" HorizontalAlignment="Left" Margin="26,87,0,0" VerticalAlignment="Top" Width="109"/>
         <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="26,118,0,0" VerticalAlignment="Top" Width="109"/>
         <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="26,149,0,0" VerticalAlignment="Top" Width="109"/>
-        <Button Click="VX_Click" x:Name="VX" Content="Выход" HorizontalAlignment="Left" Margin="181,195,0,0" VerticalAlignment="Top" Width="136" Background="#FFFF1212" OpacityMask="Red" Height="27"/>
-        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="14,195,0,0" VerticalAlignment="Top" Width="136" Background="#FF1FF11F" OpacityMask="Red" Height="27"/>
-        <TextBox x:Name="fio" HorizontalAlignment="Left" Height="23" Margin="149,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Red" SelectionBrush="Red"/>
-        <TextBox x:Name="tell" HorizontalAlignment="Left" Height="23" Margin="149,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="Red" SelectionBrush="Red" Background="{x:Null}"/>
-        <TextBox x:Name="log" HorizontalAlignment="Left" Height="23" Margin="149,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Red" SelectionBrush="Red"/>
-        <PasswordBox x:Name="pas" HorizontalAlignment="Left" Margin="149,155,0,0" VerticalAlignment="Top" Width="120" Height="23" Background="{x:Null}" BorderBrush="Red" SelectionBrush="Red"/>
+        <Button Click="VX_Click" x:Name="VX" Content="Выход" HorizontalAlignment="Left" Margin="181,195,0,0" VerticalAlignment="Top" Width="136" Background="#FFDAACAC" OpacityMask="Red" Height="27"/>
+        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="14,195,0,0" VerticalAlignment="Top" Width="136" Background="#FFA6F0A6" OpacityMask="Red" Height="27"/>
+        <TextBox x:Name="fio" HorizontalAlignment="Left" Height="23" Margin="149,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Black" SelectionBrush="Black"/>
+        <TextBox x:Name="tell" HorizontalAlignment="Left" Height="23" Margin="149,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="Black" SelectionBrush="Red" Background="{x:Null}"/>
+        <TextBox x:Name="log" HorizontalAlignment="Left" Height="23" Margin="149,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Black" SelectionBrush="Red"/>
+        <PasswordBox x:Name="pas" HorizontalAlignment="Left" Margin="149,155,0,0" VerticalAlignment="Top" Width="120" Height="23" Background="{x:Null}" BorderBrush="Black" SelectionBrush="Red"/>
 
     </Grid>
 </Window>

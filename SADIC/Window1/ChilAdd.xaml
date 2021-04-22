@@ -9,14 +9,14 @@
     <Grid Background="#FF72DAC3">
         <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="21,371,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
         <Label Content="ФИО" HorizontalAlignment="Left" Margin="72,28,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="im" Text="{Binding FIO}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <TextBox x:Name="im" Text="{Binding FIO}" HorizontalAlignment="Left" Height="35" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
         <Label Content="Родители" HorizontalAlignment="Left" Margin="72,74,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Группа" HorizontalAlignment="Left" Margin="72,123,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="72,166,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Адресс" HorizontalAlignment="Left" Margin="72,215,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="ade" Text="{Binding Adress}" HorizontalAlignment="Left" Height="23" Margin="182,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="72,215,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ade" Text="{Binding Adress}" HorizontalAlignment="Left" Height="35" Margin="182,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
         <Label Content="Мероприятия" HorizontalAlignment="Left" Margin="72,261,0,0" VerticalAlignment="Top" Width="96"/>
-        <Label Content="Кружок" HorizontalAlignment="Left" Margin="72,301,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Доп занятие" HorizontalAlignment="Left" Margin="72,301,0,0" VerticalAlignment="Top" Width="96"/>
         <ComboBox x:Name="wq3" SelectedItem="{Binding Parents}" DisplayMemberPath="FIOMA" HorizontalAlignment="Left" Margin="182,78,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="{x:Null}"/>
         <ComboBox x:Name="wq1" SelectedItem="{Binding Event1}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,265,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
         <ComboBox  x:Name="wq" SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,305,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>

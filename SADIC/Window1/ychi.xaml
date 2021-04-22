@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-           Title="Учителя" Height="357.362" Width="858.278" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+           Title="Преподаватели" Height="357.362" Width="858.278" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF509097">
-        <Label x:Name="Now" Content="Учителя" Margin="366,5,365,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" />
+        <Label x:Name="Now" Content="Преподаватели" Margin="342,0,337,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" />
         <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="652" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
@@ -19,10 +19,10 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Tich}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FIOTic}"/>
-                <DataGridTextColumn Header="Тел" Binding="{Binding Tel}"/>
-                <DataGridTextColumn Header="Руководство группой" Binding="{Binding Group.Name}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Tel}"/>
+                <DataGridTextColumn Header="Куратор группы" Binding="{Binding Group.Name}"/>
                 <DataGridTextColumn Header="Назначение на мероприятие" Binding="{Binding Event.Name}"/>
-                <DataGridTextColumn Header="Руководство кружков" Binding="{Binding Zanztia.Name}"/>
+                <DataGridTextColumn Header="Доп занятия" Binding="{Binding Zanztia.Name}"/>
                 <DataGridTextColumn Header="Логин" Binding="{Binding login_Tic}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding password}" Visibility="Hidden"/>
             </DataGrid.Columns>

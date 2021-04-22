@@ -67,5 +67,15 @@ namespace SADIC
             Mero ww = new Mero();
             ww.Show();
         }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                MainWindow ww = new MainWindow();
+                ww.Show();
+                this.Close();
+            }
+        }
     }
 }

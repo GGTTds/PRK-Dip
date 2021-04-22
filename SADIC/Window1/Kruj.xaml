@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-          Title="Кружки" Height="304.807" Width="600.431" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+          Title="Доп занятия" Height="304.807" Width="600.431" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF509097">
-        <Label x:Name="Now" Content="Кружки" Margin="250,5,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="96" />
+        <Label x:Name="Now" Content="Доп занятия" Margin="239,5,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="140" />
         <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="213" Margin="5,47,0,0" VerticalAlignment="Top" Width="374" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>

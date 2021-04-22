@@ -53,7 +53,7 @@ namespace SADIC
         private void Window_Activated(object sender, EventArgs e)
         {
             EWnter.Qwer().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            EWnter.Qwer().Tich.ToList();
+            DataTour.ItemsSource = EWnter.Qwer().Tich.ToList();
         }
 
         private void add_Click(object sender, RoutedEventArgs e)

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
     <Grid Background="#FFB3C8EC">
         <Grid.RowDefinitions>
             <RowDefinition Height="319*"/>
             <RowDefinition Height="36*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="142" Margin="367,19,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
+        <Image HorizontalAlignment="Left" Height="142" Margin="338,12,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
         <Label x:Name="Im" Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,181,0,0" Width="283"/>
         <Button Click="chiq_Click" x:Name="chiq" Content="Студенты" HorizontalAlignment="Left" Margin="33,221,0,0" VerticalAlignment="Top" Width="116" Height="30">
             <Button.Background>

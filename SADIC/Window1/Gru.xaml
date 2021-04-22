@@ -19,7 +19,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Group}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="Количество студентов" Binding="{Binding Opis}"/>
                
             </DataGrid.Columns>
         </DataGrid>

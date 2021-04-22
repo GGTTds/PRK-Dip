@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="228.652" Width="334.652" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MainWindow" Height="228.652" Width="334.652" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyUp="Window_KeyUp">
     <Grid Background="#FF43B9DC" Margin="0,0,0,-17">
-        <Label Content="Вход" Margin="137,2,0,0" VerticalAlignment="Top" Height="46" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="59"/>
-        <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="29,58,0,0" VerticalAlignment="Top" Height="23" Width="93"/>
-        <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Height="23" Width="108"/>
-        <TextBox x:Name="loggg" HorizontalAlignment="Left" Height="23" Margin="133,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF52200" BorderBrush="Red"/>
-        <PasswordBox x:Name="passs" Height="23" HorizontalAlignment="Left" Margin="133,102,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF50D0D" BorderBrush="Red"/>
-        <Button Click="VX_Click" x:Name="VX" Content="Войти как преподаватель" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="158" Background="#FFFF1212" OpacityMask="Red" Height="27"/>
-        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="97,189,0,0" Width="136" Background="#FF1FF11F" OpacityMask="Red" Height="27" VerticalAlignment="Top"/>
-        <Button Click="RG_Copy_Click" x:Name="RG_Copy" Content="Войти как студент" HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" Width="143" Background="#FFF1F11F" OpacityMask="Red" Height="27"/>
+        <Label Content="Авторизация" Margin="97,0,0,0" VerticalAlignment="Top" Height="46" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="143"/>
+        <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="29,58,0,0" VerticalAlignment="Top" Height="30" Width="93"/>
+        <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Height="29" Width="108"/>
+        <TextBox x:Name="loggg" HorizontalAlignment="Left" Height="30" Margin="133,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF52200" BorderBrush="#FF0C0B0B"/>
+        <PasswordBox x:Name="passs" Height="29" HorizontalAlignment="Left" Margin="133,102,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF50D0D" BorderBrush="#FF0A0A0A"/>
+        <Button Click="VX_Click" x:Name="VX" Content="Войти как преподаватель" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="158" OpacityMask="Red" Height="29" Background="#FFDAACAC"/>
+        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="97,189,0,0" Width="136" Background="#FFA6F0A6" OpacityMask="Red" Height="29" VerticalAlignment="Top"/>
+        <Button Click="RG_Copy_Click" x:Name="RG_Copy" Content="Войти как студент" HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" Width="143" Background="#FFF1F1B6" OpacityMask="Red" Height="29"/>
     </Grid>
 </Window>
