@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,13 +25,15 @@ namespace SADIC
         {
             InitializeComponent();
             Im.Content =$" Здравствуйте {Static.Name}";
-            data111.Content = $" Сегодня: {DateTime.Now.ToLongDateString()}"; 
+            data111.Content = $" Сегодня: {DateTime.Now.ToLongDateString()}";
             if(int.Parse(Static.Rol) == 1)
             {
                 Im.Content = "";
                 chiq.Visibility = Visibility.Hidden;
                 rod.Visibility = Visibility.Hidden;
             }
+            Task task = Task.Run(ToMail);
+
         }
 
         private void chiq_Click(object sender, RoutedEventArgs e)
@@ -77,5 +81,34 @@ namespace SADIC
                 this.Close();
             }
         }
+        public void ToMail()
+        {
+            var a = EWnter.Qwer().Event.ToList();
+            DateTime b = DateTime.Now;
+            DateTime h = DateTime.Now.AddDays(3);
+            var d = a.Where(p => p.Date >= b).Where(p => p.Date <= h);
+
+            SmtpClient Smtp = new SmtpClient("smtp.mail.ru");
+            Smtp.UseDefaultCredentials = true;
+            Smtp.EnableSsl = true;
+            Smtp.Credentials = new NetworkCredential("adsad.adad.2021@mail.ru", "xU2-ZpM-i3u-QWW");
+            //Smtp.Port = 465;
+            MailMessage Message = new MailMessage();
+            Message.From = new MailAddress("adsad.adad.2021@mail.ru");
+            Message.To.Add(new MailAddress("hersenfrigon@gmail.com"));
+            Message.Subject = "Мероприятие уже скоро!";
+            foreach (var s in d)
+            {
+                DateTime m = (DateTime)s.Date;
+                
+                Message.Body = $"Не забудьте мероприятие: {s.Name} будет {m.ToString("d")}";
+                Task.WaitAll();
+            }
+
+            Smtp.Send(Message);
+        }
+    
+    
+    
     }
 }
