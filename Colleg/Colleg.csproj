@@ -8,7 +8,7 @@
     <ProjectGuid>{B8AD035D-D0E3-4E52-9D61-B6093ABEB3A8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SADIC</RootNamespace>
-    <AssemblyName>SADIC</AssemblyName>
+    <AssemblyName>Colleg</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -82,6 +82,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="OtchInEvt.xaml.cs">
+      <DependentUpon>OtchInEvt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1\ADDTich.xaml.cs">
       <DependentUpon>ADDTich.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
     <Compile Include="Zanztia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="OtchInEvt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1\ADDTich.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,7 +306,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

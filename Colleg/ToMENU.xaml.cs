@@ -47,5 +47,20 @@ namespace SADIC
                 
             }
         }
+
+        private void Nex_Click(object sender, RoutedEventArgs e)
+        {
+            if (ps1.Password == "123456")
+            {
+                Rigist ww = new Rigist();
+                ww.Show();
+                this.Close();
+            }
+        }
+
+        private void Nex_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

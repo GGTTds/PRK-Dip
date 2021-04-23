@@ -1,13 +1,12 @@
-﻿<Window x:Class="SADIC.ToMENU"
+﻿<Window x:Class="SADIC.OtchInEvt"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="ToMENU" Height="39.416" Width="324.339" WindowStyle="None" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
+        Title="OtchInEvt" Height="450" Width="800">
     <Grid>
-        <PasswordBox x:Name="ps1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="317" Height="30"/>
-
+        
     </Grid>
 </Window>

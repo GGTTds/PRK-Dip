@@ -76,5 +76,10 @@ namespace SADIC
             EWnter.Qwer().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DataTour.ItemsSource = EWnter.Qwer().Event.ToList();
         }
+
+        private void add_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            // отчет
+        }
     }
 }
