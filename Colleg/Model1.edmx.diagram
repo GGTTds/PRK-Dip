@@ -4,23 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="87f5634f1a784c6691461015768136f3" Name="Diagram1">
-        <EntityTypeShape EntityType="SADModel.Child" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Event" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Group" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Parents" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Roul" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Tich" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADModel.Zanztia" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+      <Diagram DiagramId="ef7ea089e9534c43b55dbbb3f2a4a40f" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="SADModel.Child" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Event" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Group" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Parents" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Roul" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Tich" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Zanat" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SADModel.Zanztia" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
         <AssociationConnector Association="SADModel.FK_Child_Event" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Child_Group" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Child_Parents" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Child_Zanztia" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Tich_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="SADModel.FK_Group_Tich" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Tich_Group" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Tich_Roul" ManuallyRouted="false" />
         <AssociationConnector Association="SADModel.FK_Tich_Zanztia" ManuallyRouted="false" />
+        <AssociationConnector Association="SADModel.FK_Zanat_Tich" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

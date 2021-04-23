@@ -18,16 +18,18 @@ namespace SADIC
         public Group()
         {
             this.Child = new HashSet<Child>();
-            this.Tich = new HashSet<Tich>();
+            this.Tich1 = new HashSet<Tich>();
         }
     
         public int ID_Group { get; set; }
         public string Name { get; set; }
         public string Opis { get; set; }
+        public Nullable<int> Kurt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Child> Child { get; set; }
+        public virtual Tich Tich { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tich> Tich { get; set; }
+        public virtual ICollection<Tich> Tich1 { get; set; }
     }
 }

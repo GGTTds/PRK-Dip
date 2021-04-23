@@ -14,6 +14,12 @@ namespace SADIC
     
     public partial class Tich
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tich()
+        {
+            this.Group = new HashSet<Group>();
+        }
+    
         public int ID_Tich { get; set; }
         public string FIOTic { get; set; }
         public string Tel { get; set; }
@@ -23,10 +29,14 @@ namespace SADIC
         public string login_Tic { get; set; }
         public string password { get; set; }
         public Nullable<int> Rol { get; set; }
+        public Nullable<int> Pari { get; set; }
     
         public virtual Event Event { get; set; }
-        public virtual Group Group { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Group> Group { get; set; }
+        public virtual Group Group1 { get; set; }
         public virtual Roul Roul { get; set; }
         public virtual Zanztia Zanztia { get; set; }
+        public virtual Zanat Zanat { get; set; }
     }
 }

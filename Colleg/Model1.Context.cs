@@ -42,6 +42,7 @@ namespace SADIC
         public virtual DbSet<Roul> Roul { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tich> Tich { get; set; }
+        public virtual DbSet<Zanat> Zanat { get; set; }
         public virtual DbSet<Zanztia> Zanztia { get; set; }
     
         public virtual int FIO(string logww, ObjectParameter ima)

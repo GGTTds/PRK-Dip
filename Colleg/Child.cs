@@ -22,6 +22,9 @@ namespace SADIC
         public string Adress { get; set; }
         public Nullable<int> Event { get; set; }
         public Nullable<int> DopZan { get; set; }
+        public string budjet { get; set; }
+        public string Jelih { get; set; }
+        public string Propis { get; set; }
     
         public virtual Event Event1 { get; set; }
         public virtual Group Group { get; set; }

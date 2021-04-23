@@ -17,6 +17,9 @@
           <Property Name="Adress" Type="nvarchar" MaxLength="150" />
           <Property Name="Event" Type="int" />
           <Property Name="DopZan" Type="int" />
+          <Property Name="budjet" Type="nvarchar" MaxLength="50" />
+          <Property Name="Jelih" Type="nvarchar" MaxLength="50" />
+          <Property Name="Propis" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -33,6 +36,7 @@
           <Property Name="ID_Group" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Opis" Type="nvarchar" MaxLength="200" />
+          <Property Name="Kurt" Type="int" />
         </EntityType>
         <EntityType Name="Parents">
           <Key>
@@ -75,6 +79,25 @@
           <Property Name="login_Tic" Type="nvarchar" MaxLength="50" />
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="Rol" Type="int" />
+          <Property Name="Pari" Type="int" />
+        </EntityType>
+        <EntityType Name="Zanat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DenNed" Type="nvarchar" MaxLength="50" />
+          <Property Name="Para1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zam1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Para2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zam2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Para3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zam3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Para4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zam4" Type="nvarchar" MaxLength="250" />
+          <Property Name="Para5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zam5" Type="nvarchar" MaxLength="250" />
+          <Property Name="NomerUch" Type="int" />
         </EntityType>
         <EntityType Name="Zanztia">
           <Key>
@@ -131,6 +154,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Group_Tich">
+          <End Role="Tich" Type="Self.Tich" Multiplicity="0..1" />
+          <End Role="Group" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tich">
+              <PropertyRef Name="ID_Tich" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="Kurt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tich_Event">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
@@ -179,6 +214,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Zanat_Tich">
+          <End Role="Tich" Type="Self.Tich" Multiplicity="1" />
+          <End Role="Zanat" Type="Self.Zanat" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Tich">
+              <PropertyRef Name="ID_Tich" />
+            </Principal>
+            <Dependent Role="Zanat">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="FIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="logww" Type="nvarchar" Mode="In" />
           <Parameter Name="Ima" Type="nvarchar" Mode="InOut" />
@@ -207,6 +254,7 @@
           <EntitySet Name="Roul" EntityType="Self.Roul" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tich" EntityType="Self.Tich" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zanat" EntityType="Self.Zanat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zanztia" EntityType="Self.Zanztia" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Child_Event" Association="Self.FK_Child_Event">
             <End Role="Event" EntitySet="Event" />
@@ -224,6 +272,10 @@
             <End Role="Zanztia" EntitySet="Zanztia" />
             <End Role="Child" EntitySet="Child" />
           </AssociationSet>
+          <AssociationSet Name="FK_Group_Tich" Association="Self.FK_Group_Tich">
+            <End Role="Tich" EntitySet="Tich" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
           <AssociationSet Name="FK_Tich_Event" Association="Self.FK_Tich_Event">
             <End Role="Event" EntitySet="Event" />
             <End Role="Tich" EntitySet="Tich" />
@@ -239,6 +291,10 @@
           <AssociationSet Name="FK_Tich_Zanztia" Association="Self.FK_Tich_Zanztia">
             <End Role="Zanztia" EntitySet="Zanztia" />
             <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zanat_Tich" Association="Self.FK_Zanat_Tich">
+            <End Role="Tich" EntitySet="Tich" />
+            <End Role="Zanat" EntitySet="Zanat" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -258,6 +314,9 @@
           <Property Name="Adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Event" Type="Int32" />
           <Property Name="DopZan" Type="Int32" />
+          <Property Name="budjet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Jelih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Propis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Event1" Relationship="Self.FK_Child_Event" FromRole="Child" ToRole="Event" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Child_Group" FromRole="Child" ToRole="Group" />
           <NavigationProperty Name="Parents" Relationship="Self.FK_Child_Parents" FromRole="Child" ToRole="Parents" />
@@ -280,8 +339,10 @@
           <Property Name="ID_Group" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Kurt" Type="Int32" />
           <NavigationProperty Name="Child" Relationship="Self.FK_Child_Group" FromRole="Group" ToRole="Child" />
-          <NavigationProperty Name="Tich" Relationship="Self.FK_Tich_Group" FromRole="Group" ToRole="Tich" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Group_Tich" FromRole="Group" ToRole="Tich" />
+          <NavigationProperty Name="Tich1" Relationship="Self.FK_Tich_Group" FromRole="Group" ToRole="Tich" />
         </EntityType>
         <EntityType Name="Parents">
           <Key>
@@ -326,10 +387,32 @@
           <Property Name="login_Tic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Rol" Type="Int32" />
+          <Property Name="Pari" Type="Int32" />
           <NavigationProperty Name="Event" Relationship="Self.FK_Tich_Event" FromRole="Tich" ToRole="Event" />
-          <NavigationProperty Name="Group" Relationship="Self.FK_Tich_Group" FromRole="Tich" ToRole="Group" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Group_Tich" FromRole="Tich" ToRole="Group" />
+          <NavigationProperty Name="Group1" Relationship="Self.FK_Tich_Group" FromRole="Tich" ToRole="Group" />
           <NavigationProperty Name="Roul" Relationship="Self.FK_Tich_Roul" FromRole="Tich" ToRole="Roul" />
           <NavigationProperty Name="Zanztia" Relationship="Self.FK_Tich_Zanztia" FromRole="Tich" ToRole="Zanztia" />
+          <NavigationProperty Name="Zanat" Relationship="Self.FK_Zanat_Tich" FromRole="Tich" ToRole="Zanat" />
+        </EntityType>
+        <EntityType Name="Zanat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DenNed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Para1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zam1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Para2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zam2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Para3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zam3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Para4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zam4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Para5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zam5" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NomerUch" Type="Int32" />
+          <NavigationProperty Name="Tich" Relationship="Self.FK_Zanat_Tich" FromRole="Zanat" ToRole="Tich" />
         </EntityType>
         <EntityType Name="Zanztia">
           <Key>
@@ -400,6 +483,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Group_Tich">
+          <End Role="Tich" Type="Self.Tich" Multiplicity="0..1" />
+          <End Role="Group" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tich">
+              <PropertyRef Name="ID_Tich" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="Kurt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tich_Group">
           <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
           <End Role="Tich" Type="Self.Tich" Multiplicity="*" />
@@ -436,6 +531,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Zanat_Tich">
+          <End Role="Tich" Type="Self.Tich" Multiplicity="1" />
+          <End Role="Zanat" Type="Self.Zanat" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Tich">
+              <PropertyRef Name="ID_Tich" />
+            </Principal>
+            <Dependent Role="Zanat">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EWnter" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Child" EntityType="Self.Child" />
           <EntitySet Name="Event" EntityType="Self.Event" />
@@ -444,6 +551,7 @@
           <EntitySet Name="Roul" EntityType="Self.Roul" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tich" EntityType="Self.Tich" />
+          <EntitySet Name="Zanat" EntityType="Self.Zanat" />
           <EntitySet Name="Zanztia" EntityType="Self.Zanztia" />
           <AssociationSet Name="FK_Child_Event" Association="Self.FK_Child_Event">
             <End Role="Event" EntitySet="Event" />
@@ -465,6 +573,10 @@
             <End Role="Event" EntitySet="Event" />
             <End Role="Tich" EntitySet="Tich" />
           </AssociationSet>
+          <AssociationSet Name="FK_Group_Tich" Association="Self.FK_Group_Tich">
+            <End Role="Tich" EntitySet="Tich" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
           <AssociationSet Name="FK_Tich_Group" Association="Self.FK_Tich_Group">
             <End Role="Group" EntitySet="Group" />
             <End Role="Tich" EntitySet="Tich" />
@@ -476,6 +588,10 @@
           <AssociationSet Name="FK_Tich_Zanztia" Association="Self.FK_Tich_Zanztia">
             <End Role="Zanztia" EntitySet="Zanztia" />
             <End Role="Tich" EntitySet="Tich" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zanat_Tich" Association="Self.FK_Zanat_Tich">
+            <End Role="Tich" EntitySet="Tich" />
+            <End Role="Zanat" EntitySet="Zanat" />
           </AssociationSet>
           <FunctionImport Name="FIO">
             <Parameter Name="logww" Mode="In" Type="String" />
@@ -515,6 +631,9 @@
                 <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="Event" ColumnName="Event" />
                 <ScalarProperty Name="DopZan" ColumnName="DopZan" />
+                <ScalarProperty Name="budjet" ColumnName="budjet" />
+                <ScalarProperty Name="Jelih" ColumnName="Jelih" />
+                <ScalarProperty Name="Propis" ColumnName="Propis" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -533,6 +652,7 @@
                 <ScalarProperty Name="ID_Group" ColumnName="ID_Group" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Kurt" ColumnName="Kurt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -579,6 +699,26 @@
                 <ScalarProperty Name="login_Tic" ColumnName="login_Tic" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Pari" ColumnName="Pari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zanat">
+            <EntityTypeMapping TypeName="SADModel.Zanat">
+              <MappingFragment StoreEntitySet="Zanat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DenNed" ColumnName="DenNed" />
+                <ScalarProperty Name="Para1" ColumnName="Para1" />
+                <ScalarProperty Name="Zam1" ColumnName="Zam1" />
+                <ScalarProperty Name="Para2" ColumnName="Para2" />
+                <ScalarProperty Name="Zam2" ColumnName="Zam2" />
+                <ScalarProperty Name="Para3" ColumnName="Para3" />
+                <ScalarProperty Name="Zam3" ColumnName="Zam3" />
+                <ScalarProperty Name="Para4" ColumnName="Para4" />
+                <ScalarProperty Name="Zam4" ColumnName="Zam4" />
+                <ScalarProperty Name="Para5" ColumnName="Para5" />
+                <ScalarProperty Name="Zam5" ColumnName="Zam5" />
+                <ScalarProperty Name="NomerUch" ColumnName="NomerUch" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
