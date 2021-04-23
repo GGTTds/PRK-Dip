@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="Студенты" Height="357.362" Width="858.278" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
+        Title="Студенты" Height="394.862" Width="943.778" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
     <Grid Background="#FF509097">
         <Label x:Name="Now" Content=" Учащиеся" Margin="366,5,365,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" />
-        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="652" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="901" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -24,12 +24,15 @@
                 <DataGridTextColumn Header="Группа" Binding="{Binding Group.Name}"/>
                 <DataGridTextColumn Header="Дата рождения" Binding="{Binding DataBir}"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"/>
+                <DataGridTextColumn Header="Форма обучения" Binding="{Binding budjet}"/>
+                <DataGridTextColumn Header="Место проживание" Binding="{Binding Jelih}"/>
+                <DataGridTextColumn Header="Прописка" Binding="{Binding Propis}"/>
                 <DataGridTextColumn Header="Мероприятия" Binding="{Binding Event1.Name}"/>
                 <DataGridTextColumn Header="Доп занятия" Binding="{Binding Zanztia.Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="686,177,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
-        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="686,106,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="612,283,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
+        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="420,283,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
 
             <Button.Background>
                 <ImageBrush/>

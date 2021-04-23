@@ -19,7 +19,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Group}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Количество студентов" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="Описание группы" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="Руководитель группы" Binding="{Binding Tich.FIOTic}"/>
                
             </DataGrid.Columns>
         </DataGrid>

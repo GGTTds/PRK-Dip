@@ -28,11 +28,17 @@ namespace SADIC
             data111.Content = $" Сегодня: {DateTime.Now.ToLongDateString()}";
             if(int.Parse(Static.Rol) == 1)
             {
-                Im.Content = "";
+                Im.Content = "Претствуем Вас студент!";
                 chiq.Visibility = Visibility.Hidden;
                 rod.Visibility = Visibility.Hidden;
+                grou_Copy.Visibility = Visibility.Hidden;
             }
-            Task task = Task.Run(ToMail);
+            if (int.Parse(Static.Rol) == 2)
+            {
+                Task task = Task.Run(ToMail);
+                grou_Copy.Visibility = Visibility.Visible;
+            }
+
 
         }
 
@@ -107,8 +113,10 @@ namespace SADIC
 
             Smtp.Send(Message);
         }
-    
-    
-    
+
+        private void grou_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

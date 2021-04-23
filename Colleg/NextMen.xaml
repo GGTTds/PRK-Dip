@@ -46,6 +46,11 @@
         <Grid HorizontalAlignment="Left" Height="36" Grid.Row="1" VerticalAlignment="Top" Width="583" Background="#FF92A3DC">
             <Label x:Name="data111" Content="Label" HorizontalAlignment="Left" Margin="220,0,0,0" VerticalAlignment="Top" Width="159"/>
         </Grid>
+        <Button Click="grou_Copy_Click" x:Name="grou_Copy" Content="Пары" HorizontalAlignment="Left" Margin="360,231,0,0" VerticalAlignment="Top" Width="116" Height="30" BorderBrush="Red" OpacityMask="Red">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
