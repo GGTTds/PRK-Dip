@@ -10,5 +10,6 @@ namespace SADIC
     {
         public static string Name;
         public static string Rol;
+        public static int? IDTic = null;
     }
 }

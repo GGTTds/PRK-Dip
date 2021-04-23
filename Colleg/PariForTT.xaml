@@ -1,0 +1,42 @@
+﻿<Window x:Class="SADIC.PariForTT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+         Title="Расписание пар" Height="357.362" Width="858.278" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF509097">
+        <Label x:Name="Now" Content="Преподаватели" Margin="342,0,337,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" />
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="26,42,0,0" VerticalAlignment="Top" Width="795" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditBtn" Content="Редактировать" Width="auto" Click="EditBtn_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="День недели" Binding="{Binding DenNed}" />
+                <DataGridTextColumn Header="Пара 1" Binding="{Binding Para1}" />
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Zam1}"/>
+                <DataGridTextColumn Header="Пара 2" Binding="{Binding Para2}"/>
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Zam2}"/>
+                <DataGridTextColumn Header="Пара 3" Binding="{Binding Para3}"/>
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Zam3}"/>
+                <DataGridTextColumn Header="Пара 4" Binding="{Binding Para4}" />
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Zam4}" />
+                <DataGridTextColumn Header="Пара 5" Binding="{Binding Para5}" />
+                <DataGridTextColumn Header="Комментарий" Binding="{Binding Zam5}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="413,279,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
+        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="211,279,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
+
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

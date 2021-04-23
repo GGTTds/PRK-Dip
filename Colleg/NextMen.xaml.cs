@@ -38,8 +38,7 @@ namespace SADIC
                 Task task = Task.Run(ToMail);
                 grou_Copy.Visibility = Visibility.Visible;
             }
-
-
+            WhoID();
         }
 
         private void chiq_Click(object sender, RoutedEventArgs e)
@@ -116,7 +115,18 @@ namespace SADIC
 
         private void grou_Copy_Click(object sender, RoutedEventArgs e)
         {
+            PariForTT ww = new PariForTT();
+            ww.Show();
+        }
 
+        public void WhoID()
+        {
+            var a = EWnter.Qwer().Tich.ToList();
+            var b = a.Where(p => p.FIOTic.Contains(Static.Name));
+            foreach ( var d in b)
+            {
+                Static.IDTic = d.ID_Tich;
+            }
         }
     }
 }

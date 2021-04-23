@@ -109,6 +109,9 @@
     <Compile Include="Parents.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="PariForTT.xaml.cs">
+      <DependentUpon>PariForTT.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Roul.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
     <Compile Include="Zanztia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="PariForTT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1\OtchInEvt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
