@@ -34,6 +34,7 @@ namespace SADIC
                 num = k;
             }
             DataContext = _currentPost;
+            wqw.SelectedDate = _currentPost.DataBir;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,6 +43,10 @@ namespace SADIC
           
             try
             {
+                _currentPost.DataBir = wqw.SelectedDate;
+                _currentPost.budjet = form.Text;
+                _currentPost.Jelih = mest.Text.ToString();
+                _currentPost.Propis = pro.Text.ToString();
                 StringBuilder Error = new StringBuilder();
                 if (im.Text.Length == 0)
                     Error.Append("Введите ФИО ребенка \n");
@@ -55,7 +60,7 @@ namespace SADIC
                     Error.Append("Введите адрес проживания ребенка \n");
                 if (Error.Length == 0)
                 {
-                    _currentPost.DataBir = wqw.SelectedDate;
+                   
                     if (num == 0)
                         EWnter.Qwer().Child.Add(_currentPost);
                     EWnter.Qwer().SaveChanges();
