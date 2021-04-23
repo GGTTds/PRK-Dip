@@ -68,6 +68,39 @@ namespace SADIC
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // месяц
+            var a = EWnter.Qwer().Event.ToList();
+            DateTime b = DateTime.Now;
+            DateTime v = DateTime.Now.AddMonths(1);
+            var d = a.Where(p => p.Date >= b).Where(p => p.Date <= v);
+            var app = new Excel.Application();
+            var ork = app.Workbooks.Add();
+            Excel.Worksheet worksheet = app.Worksheets.Add();
+            worksheet.Name = "Отчет на месяц";
+            int Qwe = 1;
+            Excel.Range M = worksheet.Range[worksheet.Cells[1][Qwe], worksheet.Cells[6][Qwe]];
+            M.Merge();
+            worksheet.Cells[1][Qwe].Formula = $" Список мероприятий на месяц: {DateTime.Now.ToString("d")} - {DateTime.Now.AddMonths(1).ToString("d")}";
+            Qwe += 1;
+            worksheet.Cells[1][Qwe] = " Наименование";
+            worksheet.Cells[2][Qwe] = " Дата";
+            foreach (var t in d)
+            {
+                Qwe += 1;
+                worksheet.Cells[1][Qwe] = t.Name;
+                worksheet.Cells[2][Qwe] = t.Date;
+
+            }
+            Excel.Range RR2 = worksheet.Range[worksheet.Cells[3][2], worksheet.Cells[6][Qwe]];
+            RR2.Merge();
+            Excel.Range RR1 = worksheet.Range[worksheet.Cells[1][1], worksheet.Cells[6][Qwe]];
+            RR1.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
+            worksheet.Columns.AutoFit();
+            app.Visible = true;
         }
     }
 }
