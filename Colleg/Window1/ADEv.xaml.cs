@@ -30,6 +30,7 @@ namespace SADIC
                 num = k;
             }
             DataContext = _currentPost;
+            eeq.SelectedDate = _currentPost.Date;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

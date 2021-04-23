@@ -1,0 +1,43 @@
+﻿<Window x:Class="SADIC.ADDParTic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SADIC"
+        mc:Ignorable="d"
+        Title="Редактирование" Height="440.781" Width="686.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#FF72DAC3">
+        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="14,336,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
+        <Label Content="Замечания &#xD;&#xA;к паре 1" HorizontalAlignment="Left" Margin="43,122,0,0" VerticalAlignment="Top" Width="74" Height="47"/>
+        <TextBox Text="{Binding Zam1}" x:Name="mat"  HorizontalAlignment="Left" Height="47" Margin="174,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Пара 1" HorizontalAlignment="Left" Margin="43,79,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ot" Text="{Binding Para1}" HorizontalAlignment="Left" Height="23" Margin="174,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="207,336,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
+        <ComboBox x:Name="wwd" Text="{Binding DenNed}" HorizontalAlignment="Left" Margin="354,28,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Red">
+            <ComboBoxItem Content="Понедельник"/>
+            <ComboBoxItem Content="Вторник"/>
+            <ComboBoxItem Content="Среда"/>
+            <ComboBoxItem Content="Четверг"/>
+            <ComboBoxItem Content="Пятница"/>
+            <ComboBoxItem Content="Суббота"/>
+        </ComboBox>
+        <Label Content="День недели " HorizontalAlignment="Left" Margin="223,28,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="Замечания &#xA;к паре 2" HorizontalAlignment="Left" Margin="43,233,0,0" VerticalAlignment="Top" Width="74" Height="47"/>
+        <TextBox Text="{Binding Zam2}" x:Name="mat_Copy"  HorizontalAlignment="Left" Height="47" Margin="174,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Пара 2" HorizontalAlignment="Left" Margin="43,190,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ot_Copy" Text="{Binding Para2}" HorizontalAlignment="Left" Height="23" Margin="174,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Замечания &#xA;к паре 3" HorizontalAlignment="Left" Margin="403,122,0,0" VerticalAlignment="Top" Width="74" Height="47"/>
+        <TextBox Text="{Binding Zam3}" x:Name="mat_Copy1"  HorizontalAlignment="Left" Height="47" Margin="534,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Пара 3" HorizontalAlignment="Left" Margin="403,79,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ot_Copy1" Text="{Binding Para3}" HorizontalAlignment="Left" Height="23" Margin="534,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Замечания &#xA;к паре 4" HorizontalAlignment="Left" Margin="403,233,0,0" VerticalAlignment="Top" Width="74" Height="47"/>
+        <TextBox Text="{Binding Zam4}" x:Name="mat_Copy2"  HorizontalAlignment="Left" Height="47" Margin="534,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Пара 4" HorizontalAlignment="Left" Margin="403,190,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ot_Copy2" Text="{Binding Para4}" HorizontalAlignment="Left" Height="23" Margin="534,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+        <Label Content="Замечания &#xA;к паре 5" HorizontalAlignment="Left" Margin="403,350,0,0" VerticalAlignment="Top" Width="74" Height="47"/>
+        <TextBox Text="{Binding Zam5}" x:Name="mat_Copy3"  HorizontalAlignment="Left" Height="47" Margin="534,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
+        <Label Content="Пара 5" HorizontalAlignment="Left" Margin="403,307,0,0" VerticalAlignment="Top" Width="84"/>
+        <TextBox x:Name="ot_Copy3" Text="{Binding Para5}" HorizontalAlignment="Left" Height="23" Margin="534,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
+
+    </Grid>
+</Window>

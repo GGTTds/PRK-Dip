@@ -17,9 +17,9 @@
           <Property Name="Adress" Type="nvarchar" MaxLength="150" />
           <Property Name="Event" Type="int" />
           <Property Name="DopZan" Type="int" />
-          <Property Name="budjet" Type="nvarchar" MaxLength="50" />
-          <Property Name="Jelih" Type="nvarchar" MaxLength="50" />
-          <Property Name="Propis" Type="nvarchar" MaxLength="50" />
+          <Property Name="budjet" Type="nvarchar" MaxLength="250" />
+          <Property Name="Jelih" Type="nvarchar" MaxLength="250" />
+          <Property Name="Propis" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -98,6 +98,7 @@
           <Property Name="Para5" Type="nvarchar" MaxLength="50" />
           <Property Name="Zam5" Type="nvarchar" MaxLength="250" />
           <Property Name="NomerUch" Type="int" />
+          <Property Name="Kluc" Type="int" />
         </EntityType>
         <EntityType Name="Zanztia">
           <Key>
@@ -215,14 +216,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Zanat_Tich">
-          <End Role="Tich" Type="Self.Tich" Multiplicity="1" />
-          <End Role="Zanat" Type="Self.Zanat" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="0..1" />
+          <End Role="Zanat" Type="Self.Zanat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tich">
               <PropertyRef Name="ID_Tich" />
             </Principal>
             <Dependent Role="Zanat">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="Kluc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,9 +315,9 @@
           <Property Name="Adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Event" Type="Int32" />
           <Property Name="DopZan" Type="Int32" />
-          <Property Name="budjet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Jelih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Propis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="budjet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Jelih" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Propis" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Event1" Relationship="Self.FK_Child_Event" FromRole="Child" ToRole="Event" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Child_Group" FromRole="Child" ToRole="Group" />
           <NavigationProperty Name="Parents" Relationship="Self.FK_Child_Parents" FromRole="Child" ToRole="Parents" />
@@ -412,6 +413,7 @@
           <Property Name="Para5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Zam5" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="NomerUch" Type="Int32" />
+          <Property Name="Kluc" Type="Int32" />
           <NavigationProperty Name="Tich" Relationship="Self.FK_Zanat_Tich" FromRole="Zanat" ToRole="Tich" />
         </EntityType>
         <EntityType Name="Zanztia">
@@ -532,14 +534,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Zanat_Tich">
-          <End Role="Tich" Type="Self.Tich" Multiplicity="1" />
-          <End Role="Zanat" Type="Self.Zanat" Multiplicity="0..1" />
+          <End Role="Tich" Type="Self.Tich" Multiplicity="0..1" />
+          <End Role="Zanat" Type="Self.Zanat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tich">
               <PropertyRef Name="ID_Tich" />
             </Principal>
             <Dependent Role="Zanat">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="Kluc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -719,6 +721,7 @@
                 <ScalarProperty Name="Para5" ColumnName="Para5" />
                 <ScalarProperty Name="Zam5" ColumnName="Zam5" />
                 <ScalarProperty Name="NomerUch" ColumnName="NomerUch" />
+                <ScalarProperty Name="Kluc" ColumnName="Kluc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

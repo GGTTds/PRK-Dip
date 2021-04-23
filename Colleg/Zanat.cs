@@ -27,6 +27,7 @@ namespace SADIC
         public string Para5 { get; set; }
         public string Zam5 { get; set; }
         public Nullable<int> NomerUch { get; set; }
+        public Nullable<int> Kluc { get; set; }
     
         public virtual Tich Tich { get; set; }
     }

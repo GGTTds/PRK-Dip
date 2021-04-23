@@ -27,7 +27,6 @@ namespace SADIC
             if (_con == null)
                 _con = new EWnter();
             return _con;
-
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

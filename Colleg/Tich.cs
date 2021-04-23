@@ -18,6 +18,7 @@ namespace SADIC
         public Tich()
         {
             this.Group = new HashSet<Group>();
+            this.Zanat = new HashSet<Zanat>();
         }
     
         public int ID_Tich { get; set; }
@@ -37,6 +38,7 @@ namespace SADIC
         public virtual Group Group1 { get; set; }
         public virtual Roul Roul { get; set; }
         public virtual Zanztia Zanztia { get; set; }
-        public virtual Zanat Zanat { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Zanat> Zanat { get; set; }
     }
 }
