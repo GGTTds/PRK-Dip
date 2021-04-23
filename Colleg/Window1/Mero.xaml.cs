@@ -79,7 +79,8 @@ namespace SADIC
 
         private void add_Copy_Click(object sender, RoutedEventArgs e)
         {
-            // отчет
+            OtchInEvt ww = new OtchInEvt();
+            ww.Show();
         }
     }
 }
