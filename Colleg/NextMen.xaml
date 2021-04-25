@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
+        Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp" Closed="Window_Closed">
     <Grid Background="#FFB3C8EC">
         <Grid.RowDefinitions>
             <RowDefinition Height="319*"/>
@@ -51,6 +51,5 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-
     </Grid>
 </Window>

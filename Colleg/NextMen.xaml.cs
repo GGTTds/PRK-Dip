@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -33,11 +34,13 @@ namespace SADIC
                 rod.Visibility = Visibility.Hidden;
                 grou_Copy.Visibility = Visibility.Hidden;
             }
-            if (int.Parse(Static.Rol) == 2)
+            if (int.Parse(Static.Rol) >= 2)
             {
-                Task task = Task.Run(ToMail);
-                grou_Copy.Visibility = Visibility.Visible;
+                Thread fd = new Thread(new ThreadStart(ToMail));
+                fd.Start();
+               grou_Copy.Visibility = Visibility.Visible;
             }
+            Thread.Sleep(10);
             WhoID();
         }
 
@@ -92,7 +95,6 @@ namespace SADIC
             DateTime b = DateTime.Now;
             DateTime h = DateTime.Now.AddDays(3);
             var d = a.Where(p => p.Date >= b).Where(p => p.Date <= h);
-
             SmtpClient Smtp = new SmtpClient("smtp.mail.ru");
             Smtp.UseDefaultCredentials = true;
             Smtp.EnableSsl = true;
@@ -102,14 +104,14 @@ namespace SADIC
             Message.From = new MailAddress("adsad.adad.2021@mail.ru");
             Message.To.Add(new MailAddress("hersenfrigon@gmail.com"));
             Message.Subject = "Мероприятие уже скоро!";
+            StringBuilder g = new StringBuilder();
             foreach (var s in d)
             {
                 DateTime m = (DateTime)s.Date;
-                
-                Message.Body = $"Не забудьте мероприятие: {s.Name} будет {m.ToString("d")}";
+                g.Append($"Не забудьте мероприятие: {s.Name} будет {m.ToString("d")}\n");
                 Task.WaitAll();
             }
-
+            Message.Body = g.ToString();
             Smtp.Send(Message);
         }
 
@@ -121,12 +123,19 @@ namespace SADIC
 
         public void WhoID()
         {
-            var a = EWnter.Qwer().Tich.ToList();
-            var b = a.Where(p => p.FIOTic.Contains(Static.Name));
-            foreach ( var d in b)
-            {
-                Static.IDTic = d.ID_Tich;
-            }
+            
+                var a = EWnter.Qwer().Tich.ToList();
+                var b = a.Where(p => p.FIOTic.Contains(Static.Name));
+                foreach (var d in b)
+                {
+                    Static.IDTic = d.ID_Tich;
+                }
+            
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            GC.Collect();
         }
     }
 }
