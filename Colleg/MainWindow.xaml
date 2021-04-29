@@ -5,15 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="228.652" Width="334.652" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyUp="Window_KeyUp">
-    <Grid Background="#FF43B9DC" Margin="0,0,0,-17">
-        <Label Content="Авторизация" Margin="97,0,0,0" VerticalAlignment="Top" Height="46" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="143"/>
-        <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="29,58,0,0" VerticalAlignment="Top" Height="30" Width="93"/>
-        <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Height="29" Width="108"/>
-        <TextBox x:Name="loggg" HorizontalAlignment="Left" Height="30" Margin="133,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF52200" BorderBrush="#FF0C0B0B"/>
-        <PasswordBox x:Name="passs" Height="29" HorizontalAlignment="Left" Margin="133,102,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFF50D0D" BorderBrush="#FF0A0A0A"/>
-        <Button Click="VX_Click" x:Name="VX" Content="Войти как преподаватель" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="158" OpacityMask="Red" Height="29" Background="#FFDAACAC"/>
-        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="97,189,0,0" Width="136" Background="#FFA6F0A6" OpacityMask="Red" Height="29" VerticalAlignment="Top"/>
-        <Button Click="RG_Copy_Click" x:Name="RG_Copy" Content="Войти как студент" HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" Width="143" Background="#FFF1F1B6" OpacityMask="Red" Height="29"/>
+        Title="MainWindow" Height="246.608" Width="348.12" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyUp="Window_KeyUp">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label Content="Авторизация" Margin="110,0,0,0" VerticalAlignment="Top" Height="46" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="143" Foreground="#FF45C7A3"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="38,36,0,0" VerticalAlignment="Top" Height="30" Width="93" FontWeight="Bold" Foreground="#FF45C7A3"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="38,102,0,0" VerticalAlignment="Top" Height="29" Width="108" FontWeight="Bold" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="loggg" HorizontalAlignment="Left" Height="30" Margin="50,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Background="White" SelectionBrush="#FFF52200" BorderBrush="#FF0C0B0B"/>
+        <PasswordBox x:Name="passs" Height="29" HorizontalAlignment="Left" Margin="50,131,0,0" VerticalAlignment="Top" Width="241" Background="White" SelectionBrush="#FFF50D0D" BorderBrush="#FF0A0A0A"/>
+        <Button Click="VX_Click" x:Name="VX" Content="Войти как преподаватель" HorizontalAlignment="Left" Margin="22,174,0,0" VerticalAlignment="Top" Width="158" OpacityMask="Red" Height="29" BorderBrush="#FF057ED3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF7F7F7" Offset="0.301"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="RG_Click" x:Name="RG" Content="Регистрация" HorizontalAlignment="Left" Margin="99,208,0,0" Width="136" OpacityMask="Red" Height="29" VerticalAlignment="Top" BorderBrush="#FF057ED3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.343"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="RG_Copy_Click" x:Name="RG_Copy" Content="Войти как студент" HorizontalAlignment="Left" Margin="185,174,0,0" VerticalAlignment="Top" Width="143" OpacityMask="Red" Height="29" BorderBrush="#FF057ED3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.308"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

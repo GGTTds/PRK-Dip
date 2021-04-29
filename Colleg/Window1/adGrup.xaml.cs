@@ -24,6 +24,7 @@ namespace SADIC
         public adGrup(Group Se2Wq, int k)
         {
             InitializeComponent();
+            qw.ItemsSource = EWnter.Qwer().Tich.ToList();
             if (Se2Wq != null)
             {
                 _currentPost = Se2Wq;

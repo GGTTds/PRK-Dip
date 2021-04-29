@@ -352,6 +352,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Blog-6.jpg" />
+    <Resource Include="47313-drepix-logo-computer-website-photography-programming.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -362,6 +364,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="word-image-765.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

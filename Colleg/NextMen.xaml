@@ -6,50 +6,34 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
         Title="Меню" Height="390.664" Width="588.788" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp" Closed="Window_Closed">
-    <Grid Background="#FFB3C8EC">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.Background>
+            <ImageBrush ImageSource="47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill">
+                <ImageBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="1" CenterX="400" CenterY="300"/>
+                        <SkewTransform AngleY="0" AngleX="0" CenterX="400" CenterY="300"/>
+                        <RotateTransform Angle="0" CenterX="400" CenterY="300"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ImageBrush.RelativeTransform>
+            </ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="319*"/>
             <RowDefinition Height="36*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="142" Margin="338,12,0,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
-        <Label x:Name="Im" Content="Здравствуйте {Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,181,0,0" Width="283"/>
-        <Button Click="chiq_Click" x:Name="chiq" Content="Студенты" HorizontalAlignment="Left" Margin="33,221,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="rod_Click" x:Name="rod" Content="Родители" HorizontalAlignment="Left" Margin="33,270,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="grou_Click" x:Name="grou" Content="Группы" HorizontalAlignment="Left" Margin="33,32,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="mer_Click" x:Name="mer" Content="Мероприятия" HorizontalAlignment="Left" Margin="33,172,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="kry_Click" x:Name="kry" Content="Доп занятия" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="ys_Click" x:Name="ys" Content="Преподаватели" HorizontalAlignment="Left" Margin="33,79,0,0" VerticalAlignment="Top" Width="116" Height="30">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Grid HorizontalAlignment="Left" Height="36" Grid.Row="1" VerticalAlignment="Top" Width="583" Background="#FF92A3DC">
-            <Label x:Name="data111" Content="Label" HorizontalAlignment="Left" Margin="220,0,0,0" VerticalAlignment="Top" Width="159"/>
+        <Image HorizontalAlignment="Left" Height="142" Margin="583,123,-138,0" VerticalAlignment="Top" Width="138" Source="e997cd42dd70d41fabf5ed4cfeadf9d3.png"/>
+        <Button Click="chiq_Click" x:Name="chiq" Content="Студенты" HorizontalAlignment="Left" Margin="33,221,0,0" VerticalAlignment="Top" Width="116" Height="30" Background="#FF45C7A3"/>
+        <Button Click="rod_Click" x:Name="rod" Content="Родители" HorizontalAlignment="Left" Margin="33,270,0,0" VerticalAlignment="Top" Width="116" Height="30" Background="#FF45C7A3"/>
+        <Button Click="grou_Click" x:Name="grou" Content="Группы" HorizontalAlignment="Left" Margin="33,32,0,0" VerticalAlignment="Top" Width="116" Height="30" Background="#FF45C7A3"/>
+        <Button Click="mer_Click" x:Name="mer" Content="Мероприятия" HorizontalAlignment="Left" Margin="33,172,0,0" VerticalAlignment="Top" Width="116" Height="30" Background="#FF45C7A3"/>
+        <Button Click="kry_Click" x:Name="kry" Content="Доп занятия" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" Width="116" Height="30" Background="#FF45C7A3"/>
+        <Button Click="ys_Click" x:Name="ys" Content="Преподаватели" HorizontalAlignment="Left" Margin="33,75,0,0" VerticalAlignment="Top" Width="116" Height="30" BorderBrush="#FF707070" Background="#FF45C7A3"/>
+        <Grid HorizontalAlignment="Left" Height="36" Grid.Row="1" VerticalAlignment="Top" Width="583" Background="#FF383A40">
+            <Label x:Name="data111" Content="Label" HorizontalAlignment="Left" Margin="211,5,0,0" VerticalAlignment="Top" Width="159" Foreground="#FF45C7A3"/>
         </Grid>
-        <Button Click="grou_Copy_Click" x:Name="grou_Copy" Content="Пары" HorizontalAlignment="Left" Margin="360,231,0,0" VerticalAlignment="Top" Width="116" Height="30" BorderBrush="Red" OpacityMask="Red">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
+        <Button Click="grou_Copy_Click" x:Name="grou_Copy" Content="Пары" HorizontalAlignment="Left" Margin="415,161,0,0" VerticalAlignment="Top" Width="116" Height="30" BorderBrush="#FF45C7A3" OpacityMask="Red" Background="White"/>
+        <Label x:Name="Im" Content="Здравствуйте {Name}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="190,14,0,0" Width="283" Height="29" Foreground="White"/>
     </Grid>
 </Window>
