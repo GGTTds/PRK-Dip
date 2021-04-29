@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
-        Title="Студенты" Height="394.862" Width="943.778" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
-    <Grid Background="#FF509097">
-        <Label x:Name="Now" Content=" Учащиеся" Margin="366,5,365,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" />
-        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="901" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+        Title="Студенты" Height="364.862" Width="943.778" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Colleg;component/47313-drepix-logo-computer-website-photography-programming.jpg"/>
+        </Grid.Background>
+        <Label x:Name="Now" Content=" Учащиеся" Margin="366,5,365,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Foreground="#FF45C7A3" />
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="901" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF45C7A3">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -31,15 +34,10 @@
                 <DataGridTextColumn Header="Доп занятия" Binding="{Binding Zanztia.Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="612,283,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
-        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="420,283,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
-
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Label Content="Поиск по ФИО" HorizontalAlignment="Left" Margin="83,283,0,0" VerticalAlignment="Top" Width="98"/>
-        <TextBox  TextChanged="toFio_TextChanged" x:Name="toFio" HorizontalAlignment="Left" Height="23" Margin="186,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="{x:Null}" SelectionBrush="Red" BorderBrush="Red"/>
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="612,283,0,0" Background="White" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FF45C7A3"/>
+        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="420,283,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="#FF45C7A3" Background="White"/>
+        <Label Content="Поиск по ФИО" HorizontalAlignment="Left" Margin="83,283,0,0" VerticalAlignment="Top" Width="98" Foreground="#FF45C7A3" BorderBrush="White"/>
+        <TextBox  TextChanged="toFio_TextChanged" x:Name="toFio" HorizontalAlignment="Left" Height="23" Margin="186,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="{x:Null}" SelectionBrush="Red" BorderBrush="#FF45C7A3"/>
 
     </Grid>
 </Window>

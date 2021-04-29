@@ -352,6 +352,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Window1\47313-drepix-logo-computer-website-photography-programming.jpg" />
+    <Resource Include="Window1\1.jpg" />
     <Resource Include="Blog-6.jpg" />
     <Resource Include="47313-drepix-logo-computer-website-photography-programming.jpg" />
     <Content Include="Model1.Context.tt">

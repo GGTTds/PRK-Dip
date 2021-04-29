@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
           Title="Доп занятия" Height="304.807" Width="600.431" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF509097">
-        <Label x:Name="Now" Content="Доп. занятия" Margin="208,5,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" />
-        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="213" Margin="5,47,0,0" VerticalAlignment="Top" Width="374" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Colleg;component/47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label x:Name="Now" Content="Доп. занятия" Margin="208,5,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142" Foreground="#FF45C7A3" />
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="213" Margin="5,47,0,0" VerticalAlignment="Top" Width="374" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF45C7A3">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -22,13 +25,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="416,172,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
-        <Button Click="add_Click"  x:Name="add" Content="Добавить" Margin="416,101,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
-
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="416,172,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FF45C7A3" Background="White"/>
+        <Button Click="add_Click"  x:Name="add" Content="Добавить" Margin="416,101,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="#FF45C7A3" Background="White"/>
 
     </Grid>
 </Window>

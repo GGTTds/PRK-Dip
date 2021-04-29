@@ -6,36 +6,39 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
         Title="Добавление" Height="564.002" Width="403.176" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="#FF72DAC3">
-        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="26,475,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
-        <Label Content="ФИО" HorizontalAlignment="Left" Margin="45,28,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="im" Text="{Binding FIO}" HorizontalAlignment="Left" Height="35" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
-        <Label Content="Родители" HorizontalAlignment="Left" Margin="45,74,0,0" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Группа" HorizontalAlignment="Left" Margin="45,123,0,0" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="45,166,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="45,215,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="ade" Text="{Binding Adress}" HorizontalAlignment="Left" Height="35" Margin="182,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <Label Content="Мероприятия" HorizontalAlignment="Left" Margin="45,261,0,0" VerticalAlignment="Top" Width="96"/>
-        <Label Content="Доп занятие" HorizontalAlignment="Left" Margin="45,301,0,0" VerticalAlignment="Top" Width="96"/>
-        <ComboBox x:Name="wq3" SelectedItem="{Binding Parents}" DisplayMemberPath="FIOMA" HorizontalAlignment="Left" Margin="182,78,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="{x:Null}"/>
-        <ComboBox x:Name="wq1" SelectedItem="{Binding Event1}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,265,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
-        <ComboBox  x:Name="wq" SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,305,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
-        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="219,475,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
-        <ComboBox x:Name="wq1_Copy" SelectedItem="{Binding Group}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="182,123,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red"/>
-        <DatePicker x:Name="wqw" HorizontalAlignment="Left" Margin="182,167,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Форма обучения" HorizontalAlignment="Left" Margin="44,336,0,0" VerticalAlignment="Top" Width="115"/>
-        <Label Content="Место проживания" HorizontalAlignment="Left" Margin="45,376,0,0" VerticalAlignment="Top" Width="126"/>
-        <ComboBox Text="{Binding budjet}" x:Name="form" HorizontalAlignment="Left" Margin="182,340,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="1.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="26,475,0,0" Height="35" Background="White" OpacityMask="Red" BorderBrush="#FF45C7A3"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="31,28,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="im" Text="{Binding FIO}" HorizontalAlignment="Left" Height="35" Margin="256,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="#FFFF3333" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <Label Content="Родители" HorizontalAlignment="Left" Margin="31,74,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <Label Content="Группа" HorizontalAlignment="Left" Margin="31,123,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="31,166,0,0" VerticalAlignment="Top" Width="105" Foreground="#FF45C7A3"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="31,215,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="ade" Text="{Binding Adress}" HorizontalAlignment="Left" Height="35" Margin="256,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="Red" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <Label Content="Мероприятия" HorizontalAlignment="Left" Margin="31,261,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" Foreground="#FF45C7A3"/>
+        <Label Content="Доп занятие" HorizontalAlignment="Left" Margin="31,301,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" Foreground="#FF45C7A3"/>
+        <ComboBox x:Name="wq3" SelectedItem="{Binding Parents}" DisplayMemberPath="FIOMA" HorizontalAlignment="Left" Margin="256,78,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="White" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <ComboBox x:Name="wq1" SelectedItem="{Binding Event1}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="256,265,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <ComboBox  x:Name="wq" SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="256,305,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="219,475,0,0" Height="35" OpacityMask="Red" Background="White" BorderBrush="#FF45C7A3"/>
+        <ComboBox x:Name="wq1_Copy" SelectedItem="{Binding Group}"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="256,123,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <DatePicker x:Name="wqw" HorizontalAlignment="Left" Margin="256,167,0,0" VerticalAlignment="Top" Width="120" Background="White" Foreground="Black" BorderBrush="#FF45C7A3"/>
+        <Label Content="Форма обучения" HorizontalAlignment="Left" Margin="30,336,0,0" VerticalAlignment="Top" Width="115" Background="{x:Null}" Foreground="#FF45C7A3"/>
+        <Label Content="Место проживания" HorizontalAlignment="Left" Margin="31,376,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}" Foreground="#FF45C7A3"/>
+        <ComboBox Text="{Binding budjet}" x:Name="form" HorizontalAlignment="Left" Margin="256,340,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3">
             <ComboBoxItem Content="Бюджет"/>
             <ComboBoxItem Content="Контракт"/>
         </ComboBox>
-        <ComboBox Text="{Binding Jelih}"  x:Name="mest" HorizontalAlignment="Left" Margin="182,380,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red">
+        <ComboBox Text="{Binding Jelih}"  x:Name="mest" HorizontalAlignment="Left" Margin="256,380,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3">
             <ComboBoxItem Content="Общежитие"/>
             <ComboBoxItem Content="Сьемная квартира"/>
             <ComboBoxItem Content="Проживает с родителями"/>
         </ComboBox>
-        <Label Content="Прописка" HorizontalAlignment="Left" Margin="45,419,0,0" VerticalAlignment="Top" Width="96"/>
-        <ComboBox Text="{Binding Propis}"  x:Name="pro" HorizontalAlignment="Left" Margin="182,423,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red">
+        <Label Content="Прописка" HorizontalAlignment="Left" Margin="31,419,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" Foreground="#FF45C7A3"/>
+        <ComboBox Text="{Binding Propis}"  x:Name="pro" HorizontalAlignment="Left" Margin="256,423,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" Foreground="Black" BorderBrush="#FF45C7A3">
             <ComboBoxItem Content="Местная"/>
             <ComboBoxItem Content="Не местная"/>
         </ComboBox>

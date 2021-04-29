@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
            Title="Мероприятия" Height="316.303" Width="580.723" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF509097">
-        <Label x:Name="Now" Content="Мероприятия" Margin="193,0,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152" />
-        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="367" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF0081FF">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Colleg;component/47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label x:Name="Now" Content="Мероприятия" Margin="193,0,0,0" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152" Foreground="#FF45C7A3" />
+        <DataGrid x:Name="DataTour" HorizontalAlignment="Left" Height="215" Margin="5,47,0,0" VerticalAlignment="Top" Width="367" IsReadOnly="True" AutoGenerateColumns="False" Background="#FF63B0B0" OpacityMask="#FFF70F0F" BorderBrush="#FF45C7A3">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -20,22 +23,12 @@
                 <DataGridTextColumn Header="Номер" Binding="{Binding ID_Event}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Дата проведения" Binding="{Binding Date}"/>
-               
+
             </DataGrid.Columns>
         </DataGrid>
-        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="385,146,0,0" Background="{x:Null}" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FFFD0000"/>
-        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="385,95,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
-
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Click="add_Copy_Click" x:Name="add_Copy" Content="Создать отчет" Margin="385,200,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="Red">
-
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
+        <Button Click="del_Click" x:Name="del" Content="Удалить"  Margin="385,146,0,0" Background="White" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="Red" BorderBrush="#FF45C7A3"/>
+        <Button Click="add_Click" x:Name="add" Content="Добавить" Margin="385,95,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="#FF45C7A3" Background="White"/>
+        <Button Click="add_Copy_Click" x:Name="add_Copy" Content="Создать отчет" Margin="385,200,0,0" HorizontalAlignment="Left" Width="140" Height="30" VerticalAlignment="Top" OpacityMask="#FFFB0303" BorderBrush="#FF45C7A3" Background="White"/>
 
     </Grid>
 </Window>

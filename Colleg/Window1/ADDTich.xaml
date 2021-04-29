@@ -6,24 +6,27 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
         Title="Добавление" Height="444.781" Width="410.569" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid x:Name="ner" Background="#FF72DAC3">
-        <Button x:Name="ad" Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="29,353,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
-        <Label Content="ФИО" HorizontalAlignment="Left" Margin="52,12,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="ff" Text="{Binding FIOTic}" HorizontalAlignment="Left" Height="35" Margin="199,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="tt" Text="{Binding Tel}" HorizontalAlignment="Left" Height="23" Margin="199,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="{x:Null}"/>
-        <Label Content="Руководит группой" HorizontalAlignment="Left" Margin="52,103,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label Content="Участие в мероприятии" HorizontalAlignment="Left" Margin="52,138,0,0" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Руководит занятием" HorizontalAlignment="Left" Margin="52,173,0,0" VerticalAlignment="Top" Width="135"/>
-        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="222,353,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
-        <Label Content="Логин" HorizontalAlignment="Left" Margin="52,215,0,0" VerticalAlignment="Top" Width="104"/>
-        <TextBox x:Name="ll" Text="{Binding login_Tic}" HorizontalAlignment="Left" Height="23" Margin="199,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="52,261,0,0" VerticalAlignment="Top" Width="116"/>
-        <TextBox x:Name="pp" Text="{Binding password}" HorizontalAlignment="Left" Height="23" Margin="199,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <Label Content="Роль" HorizontalAlignment="Left" Margin="52,302,0,0" VerticalAlignment="Top" Width="116"/>
-        <ComboBox SelectedItem="{Binding Group}" DisplayMemberPath="Name"  x:Name="gr" HorizontalAlignment="Left" Margin="199,103,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" OpacityMask="Red" BorderBrush="Red"/>
-        <ComboBox SelectedItem="{Binding Event}" DisplayMemberPath="Name" x:Name="mer" HorizontalAlignment="Left" Margin="199,142,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="{x:Null}" BorderBrush="Red"/>
-        <ComboBox SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" x:Name="za" HorizontalAlignment="Left" Margin="199,177,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Black" OpacityMask="Red" BorderBrush="Red"/>
-        <ComboBox SelectedItem="{Binding Roul}" DisplayMemberPath="Name" x:Name="re" HorizontalAlignment="Left" Margin="199,306,0,0" VerticalAlignment="Top" Width="120" BorderBrush="Red" Background="{x:Null}" OpacityMask="Red"/>
+    <Grid x:Name="ner">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Colleg;component/47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button x:Name="ad" Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="29,353,0,0" Height="35" Background="White" OpacityMask="Red" BorderBrush="#FF45C7A3"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="26,12,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="ff" Text="{Binding FIOTic}" HorizontalAlignment="Left" Height="35" Margin="199,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="#FFFF3333"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="26,65,0,0" VerticalAlignment="Top" Width="84" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="tt" Text="{Binding Tel}" HorizontalAlignment="Left" Height="23" Margin="199,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionBrush="Red" Background="White"/>
+        <Label Content="Руководит группой" HorizontalAlignment="Left" Margin="26,103,0,0" VerticalAlignment="Top" Width="122" Foreground="#FF45C7A3"/>
+        <Label Content="Участие в мероприятии" HorizontalAlignment="Left" Margin="26,138,0,0" VerticalAlignment="Top" Width="142" Foreground="#FF45C7A3"/>
+        <Label Content="Руководит занятием" HorizontalAlignment="Left" Margin="26,173,0,0" VerticalAlignment="Top" Width="135" Foreground="#FF45C7A3"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="222,353,0,0" Height="35" OpacityMask="Red" Background="White" BorderBrush="#FF45C7A3"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="26,215,0,0" VerticalAlignment="Top" Width="104" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="ll" Text="{Binding login_Tic}" HorizontalAlignment="Left" Height="23" Margin="199,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="Red"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="26,261,0,0" VerticalAlignment="Top" Width="116" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="pp" Text="{Binding password}" HorizontalAlignment="Left" Height="23" Margin="199,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="Red"/>
+        <Label Content="Роль" HorizontalAlignment="Left" Margin="26,302,0,0" VerticalAlignment="Top" Width="116" Foreground="#FF45C7A3"/>
+        <ComboBox SelectedItem="{Binding Group}" DisplayMemberPath="Name"  x:Name="gr" HorizontalAlignment="Left" Margin="199,103,0,0" VerticalAlignment="Top" Width="120" Background="White" OpacityMask="Red" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Event}" DisplayMemberPath="Name" x:Name="mer" HorizontalAlignment="Left" Margin="199,142,0,0" VerticalAlignment="Top" Width="120" OpacityMask="Red" Background="White" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Zanztia}" DisplayMemberPath="Name" x:Name="za" HorizontalAlignment="Left" Margin="199,177,0,0" VerticalAlignment="Top" Width="120" Background="White" Foreground="Black" OpacityMask="Red" BorderBrush="Red"/>
+        <ComboBox SelectedItem="{Binding Roul}" DisplayMemberPath="Name" x:Name="re" HorizontalAlignment="Left" Margin="199,306,0,0" VerticalAlignment="Top" Width="120" BorderBrush="Red" Background="White" OpacityMask="Red"/>
     </Grid>
 </Window>

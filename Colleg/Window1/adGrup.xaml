@@ -6,15 +6,18 @@
         xmlns:local="clr-namespace:SADIC"
         mc:Ignorable="d"
         Title="Добавление" Height="239.955" Width="384.326" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="#FF72DAC3">
-        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="18,158,0,0" Height="35" Background="#FF74DE5D" OpacityMask="Red"/>
-        <Label Content="Наименование" HorizontalAlignment="Left" Margin="43,27,0,0" VerticalAlignment="Top" Width="99"/>
-        <TextBox x:Name="nn" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="#FFFF3333"/>
-        <Label Content="Описание" HorizontalAlignment="Left" Margin="43,74,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="211,158,0,0" Height="35" OpacityMask="Red" Background="#FFD9E469"/>
-        <TextBox x:Name="ew" Text="{Binding Opis}" HorizontalAlignment="Left" Height="23" Margin="182,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" SelectionBrush="Red"/>
-        <Label Content="Куратор" HorizontalAlignment="Left" Margin="43,112,0,0" VerticalAlignment="Top" Width="105"/>
-        <ComboBox x:Name="qw" SelectedItem="{Binding Tich}" DisplayMemberPath="FIOTic" HorizontalAlignment="Left" Margin="182,116,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="Red"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Colleg;component/47313-drepix-logo-computer-website-photography-programming.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button Click="Button_Click" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="18,158,0,0" Height="35" Background="White" OpacityMask="Red" BorderBrush="#FF45C7A3"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="43,27,0,0" VerticalAlignment="Top" Width="99" Foreground="#FF45C7A3"/>
+        <TextBox x:Name="nn" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="182,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="#FFFF3333"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="43,74,0,0" VerticalAlignment="Top" Width="105" Foreground="#FF45C7A3"/>
+        <Button Click="Button_Click_1" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="211,158,0,0" Height="35" OpacityMask="Red" Background="White" BorderBrush="#FF45C7A3"/>
+        <TextBox x:Name="ew" Text="{Binding Opis}" HorizontalAlignment="Left" Height="23" Margin="182,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" SelectionBrush="Red"/>
+        <Label Content="Куратор" HorizontalAlignment="Left" Margin="43,112,0,0" VerticalAlignment="Top" Width="105" Foreground="#FF45C7A3"/>
+        <ComboBox x:Name="qw" SelectedItem="{Binding Tich}" DisplayMemberPath="FIOTic" HorizontalAlignment="Left" Margin="182,116,0,0" VerticalAlignment="Top" Width="120" Background="White" BorderBrush="Red"/>
 
     </Grid>
 </Window>
